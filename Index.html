@@ -62,56 +62,94 @@
     border-radius: 10px;
     background-color: rgba(128, 128, 128, 0.5);
   }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid #e7e7e7;
+      background-color: #f3f3f3;
+    }
 
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: #666;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #ddd;
+    }
+
+    li a.active {
+      color: white;
+      background-color: #04AA6D;
+    }
   </style>
 
   <body>
-    <p> Nadpis </p>
-    <Text01> Tato stránka poskytuje podezřelé služby... </Text01>
+    <top>
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="Index.html">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </top>
+    <content>
+      <p> Nadpis </p>
+      <Text01> Tato stránka poskytuje podezřelé služby... </Text01>
 
-    <br>
+      <br>
 
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 1 </p2>
+      <div class="box1">
+        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+        <div class="TextBox">
+          <p2> Balicek 1 </p2>
+        </div>
+        <button> Buy </button>
       </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 2 </p2>
+      <div class="box1">
+        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+        <div class="TextBox">
+          <p2> Balicek 2 </p2>
+        </div>
+        <button> Buy </button>
       </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 3 </p2>
+      <div class="box1">
+        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+        <div class="TextBox">
+          <p2> Balicek 3 </p2>
+        </div>
+        <button> Buy </button>
       </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 1 </p2>
+      <div class="box1">
+        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+        <div class="TextBox">
+          <p2> Balicek 1 </p2>
+        </div>
+        <button> Buy </button>
       </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 2 </p2>
+      <div class="box1">
+        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+        <div class="TextBox">
+          <p2> Balicek 2 </p2>
+        </div>
+        <button> Buy </button>
       </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 3 </p2>
+      <div class="box1">
+        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+        <div class="TextBox">
+          <p2> Balicek 3 </p2>
+        </div>
+        <button> Buy </button>
       </div>
-      <button> Buy </button>
-    </div>
+    </content>
   </body>
 </html>
