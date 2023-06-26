@@ -1,117 +1,46 @@
 <!DOCTYPE html>
-<html lang="cz">
-  <meta charset="UTF-8">
-  <title>Hownovíno</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="">
-
+<html>
+  <head>
   <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid #e7e7e7;
+      background-color: #f3f3f3;
+    }
 
-  p {
-    margin: 50px;
-    text-align: center;
-    color: white;
-    font-size: 50px;
-  }
+    li {
+      float: left;
+    }
 
-  Text01 {
-    margin: 10px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-  }
+    li a {
+      display: block;
+      color: #666;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-  div.TextBox {
-    padding: 10px 20px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-  }
+    li a:hover:not(.active) {
+      background-color: #ddd;
+    }
 
-  button {
-    background-color: #00ff00;
-    border-radius: 10px;
-    border: none;
-    color: black;
-    padding: 15px 100px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #009900;
-  }
-
-  body {
-    background-color: rgb(25, 25, 25);
-    font-family: Arial;
-  }
-
-  div.box1 {
-    float: left;
-    text-align: center;
-    background-color: white;
-    margin-bottom: 25px;
-    width: 19.2%;
-    padding: 15px 100px;
-    margin: 5px;
-    border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.5);
-  }
-
+    li a.active {
+      color: white;
+      background-color: #04AA6D;
+    }
   </style>
-
+  </head>
   <body>
-    <p> Nadpis </p>
-    <Text01> Tato stránka poskytuje podezřelé služby... </Text01>
-
-    <br>
-
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 1 </p2>
-      </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 2 </p2>
-      </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 3 </p2>
-      </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 1 </p2>
-      </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 2 </p2>
-      </div>
-      <button> Buy </button>
-    </div>
-    <div class="box1">
-      <img src="meat.jpg" alt="meatImage" width="200" height="200">
-      <div class="TextBox">
-        <p2> Balicek 3 </p2>
-      </div>
-      <button> Buy </button>
-    </div>
+    <top>
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="Index.html">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </top>
   </body>
 </html>
