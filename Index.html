@@ -6,69 +6,79 @@
   <link rel="stylesheet" href="">
 
   <style>
+    p {
+      margin: 20px;
+      text-align: center;
+      color: #3C3C3C;
+      font-size: 50px;
+    }
 
-  p {
-    margin: 50px;
-    text-align: center;
-    color: white;
-    font-size: 50px;
-  }
+    mainText {
+      margin: 10px;
+      color: #3C3C3C;
+      font-size: 20px;
+      text-align: center;
+    }
 
-  Text01 {
-    margin: 10px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-  }
+    div.TextBox {
+      padding: 10px 20px;
+      color: #3C3C3C;
+      font-size: 20px;
+      text-align: center;
+    }
 
-  div.TextBox {
-    padding: 10px 20px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-  }
+    button {
+      float: left;
+      background-color: #00ff00;
+      border-radius: 10px;
+      border: none;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 100%;
+      margin: 4px 2px;
+      cursor: pointer;
+      min-width: 0%;
+      width: 400px;
+      max-width: 100%;
+      padding: 15px;
+    }
 
-  button {
-    background-color: #00ff00;
-    border-radius: 10px;
-    border: none;
-    color: black;
-    padding: 15px 100px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+    button:hover {
+      background-color: #009900;
+    }
 
-  button:hover {
-    background-color: #009900;
-  }
-
-  body {
-    background-color: rgb(25, 25, 25);
-    font-family: Arial;
-  }
-
-  div.box1 {
-    float: left;
-    text-align: center;
-    background-color: white;
-    margin-bottom: 25px;
-    width: 19.2%;
-    padding: 15px 100px;
-    margin: 5px;
-    border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.5);
-  }
+    body {
+      background-color: white;
+      font-family: Arial;
+    }
+    img.preview {
+      width: 600px;
+      max-width: 100%;
+      height: auto;
+    }
+    div.package {
+      box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
+      float: left;
+      text-align: center;
+      background-color: white;
+      margin-bottom: 25px;
+      width: 19.2%;
+      padding: 15px 100px;
+      margin-left: 180px;
+      margin-top: 20px;
+      border-radius: 10px;
+      background-color: white;
+    }
     ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       overflow: hidden;
-      border: 1px solid #e7e7e7;
+      /* border: 1px solid #e7e7e7; */
       background-color: #f3f3f3;
+      border-radius: 10px;
     }
 
     li {
@@ -88,63 +98,63 @@
     }
 
     li a.active {
-      color: white;
-      background-color: #04AA6D;
+      color: black;
+      background-color: #08ff00;
     }
   </style>
 
   <body>
     <top>
       <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="Index.html">News</a></li>
+        <li><a class="active" href="Index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
       </ul>
     </top>
     <content>
       <p> Nadpis </p>
-      <Text01> Tato stránka poskytuje podezřelé služby... </Text01>
+      <mainText> Tato stránka poskytuje podezřelé služby... </mainText>
 
       <br>
 
-      <div class="box1">
-        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+      <div class="package">
+        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
         <div class="TextBox">
           <p2> Balicek 1 </p2>
+          <button> Buy </button>
         </div>
-        <button> Buy </button>
+        
       </div>
-      <div class="box1">
-        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+      <div class="package">
+        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
         <div class="TextBox">
           <p2> Balicek 2 </p2>
         </div>
         <button> Buy </button>
       </div>
-      <div class="box1">
-        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+      <div class="package">
+        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
         <div class="TextBox">
           <p2> Balicek 3 </p2>
         </div>
         <button> Buy </button>
       </div>
-      <div class="box1">
-        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+      <div class="package">
+        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
         <div class="TextBox">
           <p2> Balicek 1 </p2>
         </div>
         <button> Buy </button>
       </div>
-      <div class="box1">
-        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+      <div class="package">
+        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
         <div class="TextBox">
           <p2> Balicek 2 </p2>
         </div>
         <button> Buy </button>
       </div>
-      <div class="box1">
-        <img src="meat.jpg" alt="meatImage" width="200" height="200">
+      <div class="package">
+        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
         <div class="TextBox">
           <p2> Balicek 3 </p2>
         </div>
