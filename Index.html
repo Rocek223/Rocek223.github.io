@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="cz"><head><meta charset="UTF-8">
-  <title>Hownovíno</title>
+  <title>Vlastní hry</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="">
 
@@ -24,19 +24,33 @@
       text-align: left;
     }
 
+    div.TextBoxTitle {
+      padding: 27px 0px;
+      color: #3C3C3C;
+      font-size: 23px;
+      text-align: center;
+    }
+    div.TextBoxPrice {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      color: #3C3C3C;
+      font-size: 35px;
+      text-align: left;
+    }
     div.TextBox {
-      padding: 10px 20px;
+      line-height: 3;
+      padding-bottom: 20px;
       color: #3C3C3C;
       font-size: 20px;
-      text-align: center;
+      text-align: left;
     }
 
     button {
       float: left;
-      background-color: #00ff00;
+      background-color: #1BC300;
       border-radius: 10px;
       border: none;
-      color: black;
+      color: white;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -47,7 +61,7 @@
       width: 400px;
       max-width: 100%;
       padding: 15px;
-      box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.2);
+      /*box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.2);*/
     }
 
     button:hover {
@@ -59,8 +73,16 @@
       font-family: Arial;
     }
     img.preview {
-      width: 600px;
+      padding-top: 15px;
+      float: left;
+      width: 50px;
       max-width: 100%;
+      height: auto;
+    }
+    img.tick {
+      float: center;
+      width: 20px;
+      max-width: 70%;
       height: auto;
     }
     img.screenshot {
@@ -73,16 +95,29 @@
       border-radius: 10px;
       box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
     }
-    div.package {
+    div.package1 {
       box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
       float: left;
       text-align: center;
       background-color: white;
       margin-bottom: 25px;
       width: 19.2%;
-      padding: 15px 100px;
-      margin-left: 180px;
-      margin-top: 20px;
+      padding: 15px 50px;
+      margin-left: 250px;
+      margin-top: 100px;
+      border-radius: 10px;
+      background-color: white;
+    }
+    div.package2 {
+      box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
+      float: right;
+      text-align: center;
+      background-color: white;
+      margin-bottom: 25px;
+      width: 19.2%;
+      padding: 15px 50px;
+      margin-right: 250px;
+      margin-top: 100px;
       border-radius: 10px;
       background-color: white;
     }
@@ -123,9 +158,9 @@
   </head><body>
     <top>
       <ul>
-        <li><a class="active" href="Index.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a class="active" href="Index.html">Domů</a></li>
+        <li><a href="About.html">O nás</a></li>
+        <li><a href="#contact">Kontakt</a></li>
       </ul>
     </top>
     <content>
@@ -136,48 +171,60 @@
       
       <br>
 
-      <div class="package">
-        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
-        <div class="TextBox">
-          <p2> Balicek 1 </p2>
-          <button> Buy </button>
+      <div class="package1">
+        <img class="preview" src="Icon4.jpg" alt="Icon4">
+        <div class="TextBoxTitle">
+          <p2> <b> Rychlejší volba </b> </p2>
         </div>
-        
+        <div class="TextBoxPrice">
+          <p2> <b> Od 499 kč </b> </p2>        
+        </div>
+        <div class="TextBox">
+          <button> Více informací </button>
+          <br>
+          <p2> __________________________ </p2>
+          <p2> Rychlejší a levnější řešení: </p2>
+          <br>
+          <img class="tick" src="Tick2.jpg" alt="Tick">
+          <p2> 5 různých šablon </p2> 
+          <br>
+          <img class="tick" src="Tick2.jpg" alt="Tick">
+          
+          <p2> Méně věcí lze ve hře upravit </p2> 
+          <br>
+          <img class="tick" src="Tick2.jpg" alt="Tick">
+          
+          <p2> Za 5 dní hotovo </p2> 
+          <br>
+        </div>
       </div>
-      <div class="package">
-        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
-        <div class="TextBox">
-          <p2> Balicek 2 </p2>
+
+      <div class="package2">
+        <img class="preview" src="Icon3.jpg" alt="Icon3">
+        <div class="TextBoxTitle">
+          <p2> <b> Kvalitnější hra </b> </p2>
         </div>
-        <button> Buy </button>
-      </div>
-      <div class="package">
-        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
-        <div class="TextBox">
-          <p2> Balicek 3 </p2>
+        <div class="TextBoxPrice">
+          <p2> <b> Od 999 kč </b> </p2>        
         </div>
-        <button> Buy </button>
-      </div>
-      <div class="package">
-        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
         <div class="TextBox">
-          <p2> Balicek 1 </p2>
+          <button> Více informací </button>
+          <br>
+          <p2> __________________________ </p2>
+          <p2> Kvalitnější a detailnější řešení: </p2>
+          <br>
+          <img class="tick" src="Tick2.jpg" alt="Tick">
+          <p2> 20 různých šablon </p2> 
+          <br>
+          <img class="tick" src="Tick2.jpg" alt="Tick">
+          
+          <p2> Lze téměř vše ve hře upravit </p2> 
+          <br>
+          <img class="tick" src="Tick2.jpg" alt="Tick">
+          
+          <p2> Za 14 dní hotovo </p2> 
+          <br>
         </div>
-        <button> Buy </button>
-      </div>
-      <div class="package">
-        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
-        <div class="TextBox">
-          <p2> Balicek 2 </p2>
-        </div>
-        <button> Buy </button>
-      </div>
-      <div class="package">
-        <img class="preview" src="meat.jpg" alt="meatImage" width="200">
-        <div class="TextBox">
-          <p2> Balicek 3 </p2>
-        </div>
-        <button> Buy </button>
       </div>
     </content>
   
