@@ -1,0 +1,71 @@
+p.mainTitle {
+  margin-top: 80px;
+  text-align: center;
+  color: #3C3C3C;
+  font-size: 3vw;
+  float: top;
+}
+
+body {
+  background-color: white;
+  font-family: Arial;
+}
+
+div.TextBoxTitle {
+  padding: 20px 0px;
+  color: #3C3C3C;
+  font-size: 22px;
+  text-align: center;
+}
+
+button {
+  float: left;
+  background-color: #1BC300;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100%;
+  margin: 4px 2px;
+  cursor: pointer;
+  min-width: 0%;
+  width: 400px;
+  max-width: 100%;
+  padding: 15px;
+  /*box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.2);*/
+}
+
+button:hover {
+  background-color: #009900;
+}
+
+
+img.screenshot {
+  width: 130px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
+}
+.games-container {
+  display: grid;
+  height: 400px;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  padding: 10px;
+}
+div.package {
+  box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
+  text-align: center;
+  background-color: white;
+  width: 10vw;
+  height: 25vw;
+  padding: 0px 40px;
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: white;
+}
