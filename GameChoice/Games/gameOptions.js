@@ -51,3 +51,7 @@ function onCustomOptionChange(selectionId, iconPreviewId, option1, option2, opti
     platformIcon.src = option3;
   }
 }
+
+function sendEmail() {
+  // TODO: Send email ._.
+}
