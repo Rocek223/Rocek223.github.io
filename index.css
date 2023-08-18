@@ -92,7 +92,6 @@ img.tick {
 }
 
 img.screenshot {
-  margin-top: 60px;
   margin-right: 130px;
   width: 180px;
   max-width: 100%;
@@ -134,7 +133,7 @@ html {
 }
 
 #intro {
-  height: 600px;
+  height: 400px;
 }
 
 #offers {

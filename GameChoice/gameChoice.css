@@ -58,20 +58,23 @@ img.screenshot {
 }
 .games-container {
   display: grid;
+  width: 100vw;
   height: 400px;
   justify-content: space-evenly;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fill, 335px);
   gap: 10px;
   padding: 10px;
 }
+
 div.package {
   box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
   text-align: center;
   background-color: white;
-  width: 10vw;
-  height: 25vw;
+  width: 200px;
+  height: 400px;
   padding: 0px 40px;
   margin-top: 30px;
   border-radius: 10px;
   background-color: white;
+  transform: translate(-50%, auto);
 }
