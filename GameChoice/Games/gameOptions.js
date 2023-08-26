@@ -9,11 +9,12 @@ function onCustomIconChange(inputFileId, iconPreviewId) {
 function onCustomTextureChange(inputFileId, iconPreviewId) {
   const [file] = document.getElementById(inputFileId).files
   if (file) {
+    console.log("69");
     document.getElementById(iconPreviewId).src = URL.createObjectURL(file)
   }
 }
 
-function onCheckboxClick() {
+function onCheckboxClick(defaultIcon) {
   // Get the checkbox
   var checkBox = document.getElementById("default");
   // Get the output text
@@ -21,7 +22,7 @@ function onCheckboxClick() {
 
   // If the checkbox is checked, display the output text
   if (checkBox.checked == true){
-    document.getElementById("icon").src = "FlappyBird/FlappyBirdIcon.png";
+    document.getElementById("icon").src = defaultIcon;
   }
 }
 function onPlatformSelected() {
@@ -56,7 +57,7 @@ function onCustomOptionChange(selectionId, iconPreviewId, option1, option2, opti
     console.log(platformIcon);
   }
 }
-function onCustomSoundChange(selectionId, audioPreviewId, audioSourcePreviewId, option1, option2, option3){
+function onCustomSoundOptionChange(selectionId, audioPreviewId, audioSourcePreviewId, option1, option2, option3){
   var select = document.getElementById(selectionId);
   var audioPreview = document.getElementById(audioPreviewId);
   var audioSourcePreview = document.getElementById(audioSourcePreviewId);
@@ -72,6 +73,17 @@ function onCustomSoundChange(selectionId, audioPreviewId, audioSourcePreviewId, 
   }
   audioPreview.load();
 
+}
+function onCustomSoundChange(inputFileId, audioSourcePreviewId, audioPreviewId) {
+
+  const [file] = document.getElementById(inputFileId).files
+  var audioPreview = document.getElementById(audioPreviewId);
+  if (file) {
+    
+    document.getElementById(audioSourcePreviewId).src = URL.createObjectURL(file)
+    console.log("buzn");
+  }
+  audioPreview.load();
 }
 
 function sendEmail() {

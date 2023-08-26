@@ -18,19 +18,19 @@
       <p class="mainTitle"> Nastavení hry:  </p>
       <div class="games-container">
         <div class="package">
-          <p class="firstDescriptionTitle"> Flappy Bird </p>
+          <p class="firstDescriptionTitle"> Pacman </p>
           <br>
-          <p class="firstDescription"> Ovládání: <i> kliknutí myši </i> </p>
+          <p class="firstDescription"> Ovládání: <i> šipky </i> </p>
           <br>
-          <p class="firstDescription"> Cíl hry: <i> dostat se co nejdál </i> </p>
-          <iframe src="BuildFlappyBird/FlappyBirdGame.html"> </iframe>  
+          <p class="firstDescription"> Cíl hry: <i> sebrat všechny body </i> </p>
+          <iframe src="BuildPacman/PacmanGame.html"> </iframe>  
         </div>
         <div class="package">
           <p class="descriptionTitle"> Základní nastavení </p>
           <br>
           <div class="inputLine">
             <label for="fname">Název hry:</label>
-            <input class="text" type="text" id="fname" name="fname"><br><br>
+            <input class="text" type="text" id="fname" name="fname" value="Pacman"><br><br>
           </div>
           <br> <br> <br>
           <div class="inputLine">
@@ -44,59 +44,138 @@
           <br><br><br>
           <div class="inputLine">
             <label for="icon">Ikona hry:</label> 
-            <img class="gameIcon" id="icon" alt="icon" src = "FlappyBird/FlappyBirdIcon.png">
+            <img class="gameIcon" id="icon" alt="icon" src = "Pacman/icon.png">
             <input type="file" class="file" id="inputIcon" name="avatar" accept="image/png, image/jpeg" onchange="onCustomIconChange('inputIcon', 'icon')"/>
           </div>
           <br><br><br> <br>
           <div class="inputLine">
             <label for="scales">Výchozí ikona:</label>
-            <input type="checkbox" id="default" name="default" checked onclick="onCheckboxClick()"/>
+            <input type="checkbox" id="default" name="default" checked onclick="onCheckboxClick('Pacman/icon.png')"/>
           </div>
           <br><br> <br>
+
         </div>
         <div class="package">
           <p class="descriptionTitle"> Grafika: </p>
           <div class="inputLine">
             <label for="main">Hlavní postava:</label>
-            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "FlappyBird/BirdYellow.png">
-            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "FlappyBird/BirdYellow.png", "FlappyBird/BirdRed.png", "FlappyBird/BirdGreen.png")'>
-              <option value="1">Žlutý pták (výchozí)</option>
-              <option value="2">Červený pták</option>
-              <option value="3">Zelený pták</option>
+            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "Pacman/pacman1.png">
+            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Pacman/pacman1.png", "Pacman/lemon.png", "Pacman/coin.png")'>
+              <option value="1">Pacman (výchozí)</option>
+              <option value="2">Citron</option>
+              <option value="3">Mince</option>
             </select>
             <input type="file" class="file" id="inputCharacter" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputCharacter', 'mainCharacterIcon')"/>
           </div>
-          <br><br><br> <br><br><br>
+          <br><br> <br>
           <div class="inputLine">
-            <label for="pipes">Trubky:</label>
-            <img class="normalIcon" id="PipeIcon" alt="icon" src = "FlappyBird/PipeGreen.png" style="width: 15px">
-            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "FlappyBird/PipeGreen.png", "FlappyBird/PipeYellow.png", "FlappyBird/PipePlastic.png")'>
-              <option value="1">Zelená trubka (výchozí)</option>
-              <option value="2">Žlutá trubka</option>
-              <option value="3">Plastová trubka</option>
+            <label for="pipes">Zdi:</label>
+            <img class="normalIcon" id="PipeIcon" alt="icon" src = "Pacman/wall1.png" style="width: 50px">
+            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "Pacman/wall1.png", "Pacman/wall2.png", "Pacman/wall3.png")'>
+              <option value="1">Bílá (výchozí)</option>
+              <option value="2">Modrá</option>
+              <option value="3">Cihlová</option>
             </select>
             <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'PipeIcon')"/>
           </div>
-          <br><br> <br><br>
+          <br><br><br>
           <div class="inputLine">
-            <label for="background">Pozadí:</label>
-            <img class="normalIcon" id="backgroundIcon" alt="icon" src = "FlappyBird/BackgroundCity.png" style="width: 60px">
-            <select name="background" id="background" onclick=
-            'onCustomOptionChange("background", "backgroundIcon", "FlappyBird/BackgroundCity.png", "FlappyBird/BackgroundForest.png", "FlappyBird/BackgroundDesert.png")'>
-              <option value="1">Město (výchozí)</option>
-              <option value="2">Les</option>
-              <option value="3">Poušť</option>
+            <label for="pipes">Duch 1:</label>
+            <img class="normalIcon" id="ghost1Icon" alt="icon" src = "Pacman/ghost1.png" style="width: 30px">
+            <select name="pipe" id="ghost1" onclick='onCustomOptionChange("ghost1", "ghost1Icon", "Pacman/ghost1.png", "Pacman/ghost1G.png", "Pacman/ghost1TG.png")'>
+              <option value="1">Pixel (výchozí)</option>
+              <option value="2">Kreslený</option>
+              <option value="3">Ovoce</option>
             </select>
-            <input type="file" class="file" id="inputBackground" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputBackground', 'backgroundIcon')"/>
+            <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'PipeIcon')"/>
+          </div>
+          <br><br><br>
+          <div class="inputLine">
+            <label for="pipes">Duch 2:</label>
+            <img class="normalIcon" id="ghost2Icon" alt="icon" src = "Pacman/ghost2.png" style="width: 30px">
+            <select name="pipe" id="ghost2" onclick='onCustomOptionChange("ghost2", "ghost2Icon", "Pacman/ghost2.png", "Pacman/ghost2G.png", "Pacman/ghost2TG.png")'>
+              <option value="1">Pixel (výchozí)</option>
+              <option value="2">Kreslený</option>
+              <option value="3">Ovoce</option>
+            </select>
+            <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'PipeIcon')"/>
+          </div>
+          <br><br><br>
+          <div class="inputLine">
+            <label for="pipes">Duch 3:</label>
+            <img class="normalIcon" id="ghost3Icon" alt="icon" src = "Pacman/ghost3.png" style="width: 30px">
+            <select name="pipe" id="ghost3" onclick='onCustomOptionChange("ghost3", "ghost3Icon", "Pacman/ghost3.png", "Pacman/ghost3G.png", "Pacman/ghost3TG.png")'>
+              <option value="1">Pixel (výchozí)</option>
+              <option value="2">Kreslený</option>
+              <option value="3">Ovoce</option>
+            </select>
+            <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'PipeIcon')"/>
+          </div>
+          <br><br><br>
+          <div class="inputLine">
+            <label for="pipes">Duch 4:</label>
+            <img class="normalIcon" id="ghost4Icon" alt="icon" src = "Pacman/ghost4.png" style="width: 30px">
+            <select name="pipe" id="ghost4" onclick='onCustomOptionChange("ghost4", "ghost4Icon", "Pacman/ghost4.png", "Pacman/ghost4G.png", "Pacman/ghost4TG.png")'>
+              <option value="1">Pixel (výchozí)</option>
+              <option value="2">Kreslený</option>
+              <option value="3">Ovoce</option>
+            </select>
+            <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'PipeIcon')"/>
+          </div>
+
+        </div>
+        <div class="package">
+          <p class="descriptionTitle"> Zvukové efekty: </p>
+          <div class="inputLine">
+            <label for="main">Pacman:</label>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Pacman/eat1.mp3", "Pacman/eat2.mp3", "FlappyBird/kokodak.mp3")'>
+              <option value="1">Pacman (výchozí)</option>
+              <option value="2">Kousání </option>
+            </select>
+
+            <input type="file" class="file" id="inputSound1" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound1', 'flySoundPreview', 'audio2')"/>
+            <audio id="audio2" controls="controls">
+              <source id="flySoundPreview" type="audio/mpeg" src = "Pacman/eat1.mp3"> </source>
+            </audio>            
+          </div>
+          <br><br><br> <br><br><br>
+          <div class="inputLine">
+            <label for="main">Zvuk prohry:</label>
+            <select name="character" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "passSoundPreview", "Pacman/kill1.mp3", "Pacman/kill2.mp3", "FlappyBird/pass3.wav")'>
+              <option value="1">Klasika (výchozí)</option>
+              <option value="2">Nůž</option>
+            </select>
+
+            <input type="file" class="file" id="inputSound2" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound2', 'passSoundPreview', 'audio1')"/>
+            <audio id="audio1" controls="controls">
+              <source id="passSoundPreview" src = "Pacman/kill1.mp3"> </source>
+            </audio>            
           </div>
         </div>
-
+        <div class="package">
+          <p class="descriptionTitle"> Herní nastavení: </p>
+          <div class="inputLine">
+            <label for="main">Počet bodů:</label>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+              <option value="1">38 (výchozí)</option>
+              <option value="2">28</option>
+              <option value="3">20</option>
+            </select>          
+          </div>
+          <br><br><br>
+          <div class="inputLine">
+            <label for="main">Rychlost hráče:</label>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+              <option value="1">Normální (výchozí)</option>
+              <option value="2">Rychlá</option>
+              <option value="3">Pomalá</option>
+            </select>          
+          </div>
+        </div>      
         <div class="sendButton">
           <button type="button" class="sendButton" onclick="sendEmail()" > Zaplatit </button>
-        </div>
-        
+        </div>   
       </div>
-
     </content>
 
 </body></html>

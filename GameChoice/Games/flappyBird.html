@@ -30,7 +30,7 @@
           <br>
           <div class="inputLine">
             <label for="fname">Název hry:</label>
-            <input class="text" type="text" id="fname" name="fname"><br><br>
+            <input class="text" type="text" id="fname" name="fname" value="Flappy Bird"> <br><br>
           </div>
           <br> <br> <br>
           <div class="inputLine">
@@ -94,27 +94,27 @@
           <p class="descriptionTitle"> Zvukové efekty: </p>
           <div class="inputLine">
             <label for="main">Zvuk skoku:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
               <option value="1">Mávnutí 1 (výchozí)</option>
               <option value="2">Mávnutí 2</option>
               <option value="3">Zvuk slepice</option>
             </select>
 
-            <input type="file" class="file" id="inputCharacter" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomTextureChange('inputCharacter', 'flySoundPreview')"/>
-            <audio id="audio" controls="controls">
-              <source id="flySoundPreview" type="audio/mpeg" src = "FlappyBird/kokodak.mp3"> </source>
+            <input type="file" class="file" id="inputCharacter3" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputCharacter3', 'flySoundPreview', 'audio2')"/>
+            <audio id="audio2" controls="controls">
+              <source id="flySoundPreview" type="audio/mpeg" src = "FlappyBird/fly1.mp3"> </source>
             </audio>            
           </div>
           <br><br><br> <br><br><br>
           <div class="inputLine">
             <label for="main">Zvuk získání bodu:</label>
-            <select name="character" id="passSound" onclick='onCustomSoundChange("passSound", "audio1", "passSoundPreview", "FlappyBird/pass1.wav", "FlappyBird/pass2.wav", "FlappyBird/pass3.wav")'>
+            <select name="character" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "passSoundPreview", "FlappyBird/pass1.wav", "FlappyBird/pass2.wav", "FlappyBird/pass3.wav")'>
               <option value="1">Cinknutí 1 (výchozí)</option>
               <option value="2">Cinknutí 2</option>
               <option value="3">Cinknutí 3</option>
             </select>
 
-            <input type="file" class="file" id="inputCharacter" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomTextureChange('inputCharacter', 'passSoundPreview')"/>
+            <input type="file" class="file" id="inputCharacter2" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputCharacter2', 'passSoundPreview', 'audio1')"/>
             <audio id="audio1" controls="controls">
               <source id="passSoundPreview" src = "FlappyBird/pass1.wav"> </source>
             </audio>            
@@ -124,7 +124,7 @@
           <p class="descriptionTitle"> Herní nastavení: </p>
           <div class="inputLine">
             <label for="main">Obtížnost:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
               <option value="1">Normální (výchozí)</option>
               <option value="2">Jednoduchá</option>
               <option value="3">Obtížná</option>

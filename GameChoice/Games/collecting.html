@@ -18,19 +18,19 @@
       <p class="mainTitle"> Nastavení hry:  </p>
       <div class="games-container">
         <div class="package">
-          <p class="firstDescriptionTitle"> Flappy Bird </p>
+          <p class="firstDescriptionTitle"> Sbírání hub </p>
           <br>
           <p class="firstDescription"> Ovládání: <i> kliknutí myši </i> </p>
           <br>
-          <p class="firstDescription"> Cíl hry: <i> dostat se co nejdál </i> </p>
-          <iframe src="BuildFlappyBird/FlappyBirdGame.html"> </iframe>  
+          <p class="firstDescription"> Cíl hry: <i> sezbírat co nejvíce hub <br> za 30 sekund </i> </p>
+          <iframe src="BuildCollecting/CollectingGame.html"> </iframe>  
         </div>
         <div class="package">
           <p class="descriptionTitle"> Základní nastavení </p>
           <br>
           <div class="inputLine">
             <label for="fname">Název hry:</label>
-            <input class="text" type="text" id="fname" name="fname"><br><br>
+            <input class="text" type="text" id="fname" name="fname" value=""><br><br>
           </div>
           <br> <br> <br>
           <div class="inputLine">
@@ -44,7 +44,7 @@
           <br><br><br>
           <div class="inputLine">
             <label for="icon">Ikona hry:</label> 
-            <img class="gameIcon" id="icon" alt="icon" src = "FlappyBird/FlappyBirdIcon.png">
+            <img class="gameIcon" id="icon" alt="icon" src = "Collecting/icon.png">
             <input type="file" class="file" id="inputIcon" name="avatar" accept="image/png, image/jpeg" onchange="onCustomIconChange('inputIcon', 'icon')"/>
           </div>
           <br><br><br> <br>
@@ -57,40 +57,49 @@
         <div class="package">
           <p class="descriptionTitle"> Grafika: </p>
           <div class="inputLine">
-            <label for="main">Hlavní postava:</label>
-            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "FlappyBird/BirdYellow.png">
-            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "FlappyBird/BirdYellow.png", "FlappyBird/BirdRed.png", "FlappyBird/BirdGreen.png")'>
-              <option value="1">Žlutý pták (výchozí)</option>
-              <option value="2">Červený pták</option>
-              <option value="3">Zelený pták</option>
+            <label for="main">Sbíraná věc:</label>
+            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "Collecting/item1.png">
+            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Collecting/item1.png", "Collecting/item2.png", "Collecting/item3.png")'>
+              <option value="1">Houba (výchozí)</option>
+              <option value="2">Čtyřlístek</option>
+              <option value="3">Salát</option>
             </select>
             <input type="file" class="file" id="inputCharacter" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputCharacter', 'mainCharacterIcon')"/>
           </div>
           <br><br><br> <br><br><br>
-          <div class="inputLine">
-            <label for="pipes">Trubky:</label>
-            <img class="normalIcon" id="PipeIcon" alt="icon" src = "FlappyBird/PipeGreen.png" style="width: 15px">
-            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "FlappyBird/PipeGreen.png", "FlappyBird/PipeYellow.png", "FlappyBird/PipePlastic.png")'>
-              <option value="1">Zelená trubka (výchozí)</option>
-              <option value="2">Žlutá trubka</option>
-              <option value="3">Plastová trubka</option>
-            </select>
-            <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'PipeIcon')"/>
-          </div>
-          <br><br> <br><br>
+
           <div class="inputLine">
             <label for="background">Pozadí:</label>
-            <img class="normalIcon" id="backgroundIcon" alt="icon" src = "FlappyBird/BackgroundCity.png" style="width: 60px">
+            <img class="normalIcon" id="backgroundIcon" alt="icon" src = "Collecting/background1.png" style="width: 60px">
             <select name="background" id="background" onclick=
-            'onCustomOptionChange("background", "backgroundIcon", "FlappyBird/BackgroundCity.png", "FlappyBird/BackgroundForest.png", "FlappyBird/BackgroundDesert.png")'>
-              <option value="1">Město (výchozí)</option>
-              <option value="2">Les</option>
-              <option value="3">Poušť</option>
+            'onCustomOptionChange("background", "backgroundIcon", "Collecting/background1.png", "Collecting/background2.png", "Collecting/background3.png")'>
+              <option value="1">Zelená (výchozí)</option>
+              <option value="2">Tráva</option>
+              <option value="3">Hlína</option>
             </select>
             <input type="file" class="file" id="inputBackground" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputBackground', 'backgroundIcon')"/>
           </div>
         </div>
-
+        <div class="package">
+          <p class="descriptionTitle"> Herní nastavení: </p>
+          <div class="inputLine">
+            <label for="main">Délka hry:</label>
+            <select name="character" id="flySound" onclick='onCustomSoundChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+              <option value="1">30s (výchozí)</option>
+              <option value="2">60s</option>
+              <option value="3">20s</option>
+            </select>          
+          </div>
+          <br> <br> <br> 
+          <div class="inputLine">
+            <label for="main">Rychlost růstu:</label>
+            <select name="character" id="flySound" onclick='onCustomSoundChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+              <option value="1">8s (výchozí)</option>
+              <option value="2">6s</option>
+              <option value="3">10s</option>
+            </select>          
+          </div>
+        </div>       
         <div class="sendButton">
           <button type="button" class="sendButton" onclick="sendEmail()" > Zaplatit </button>
         </div>

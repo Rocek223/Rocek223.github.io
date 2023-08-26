@@ -18,19 +18,19 @@
       <p class="mainTitle"> Nastavení hry:  </p>
       <div class="games-container">
         <div class="package">
-          <p class="firstDescriptionTitle"> Flappy Bird </p>
+          <p class="firstDescriptionTitle"> Had </p>
           <br>
-          <p class="firstDescription"> Ovládání: <i> kliknutí myši </i> </p>
+          <p class="firstDescription"> Ovládání: <i> šipky </i> </p>
           <br>
-          <p class="firstDescription"> Cíl hry: <i> dostat se co nejdál </i> </p>
-          <iframe src="BuildFlappyBird/FlappyBirdGame.html"> </iframe>  
+          <p class="firstDescription"> Cíl hry: <i> sníst co nejvíce jablek </i> </p>
+          <iframe src="BuildSnake/SnakeGame.html"> </iframe>  
         </div>
         <div class="package">
           <p class="descriptionTitle"> Základní nastavení </p>
           <br>
           <div class="inputLine">
             <label for="fname">Název hry:</label>
-            <input class="text" type="text" id="fname" name="fname"><br><br>
+            <input class="text" type="text" id="fname" name="fname" value="Had"><br><br>
           </div>
           <br> <br> <br>
           <div class="inputLine">
@@ -44,7 +44,7 @@
           <br><br><br>
           <div class="inputLine">
             <label for="icon">Ikona hry:</label> 
-            <img class="gameIcon" id="icon" alt="icon" src = "FlappyBird/FlappyBirdIcon.png">
+            <img class="gameIcon" id="icon" alt="icon" src = "Snake/icon.png">
             <input type="file" class="file" id="inputIcon" name="avatar" accept="image/png, image/jpeg" onchange="onCustomIconChange('inputIcon', 'icon')"/>
           </div>
           <br><br><br> <br>
@@ -57,40 +57,78 @@
         <div class="package">
           <p class="descriptionTitle"> Grafika: </p>
           <div class="inputLine">
-            <label for="main">Hlavní postava:</label>
-            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "FlappyBird/BirdYellow.png">
-            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "FlappyBird/BirdYellow.png", "FlappyBird/BirdRed.png", "FlappyBird/BirdGreen.png")'>
-              <option value="1">Žlutý pták (výchozí)</option>
-              <option value="2">Červený pták</option>
-              <option value="3">Zelený pták</option>
+            <label for="main">Had:</label>
+            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "Snake/snake1.png">
+            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Snake/snake1.png", "Snake/snake2.png", "Snake/snake3.png")'>
+              <option value="1">Modrý (výchozí)</option>
+              <option value="2">Žlutý</option>
+              <option value="3">Realistický</option>
             </select>
             <input type="file" class="file" id="inputCharacter" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputCharacter', 'mainCharacterIcon')"/>
           </div>
           <br><br><br> <br><br><br>
           <div class="inputLine">
-            <label for="pipes">Trubky:</label>
-            <img class="normalIcon" id="PipeIcon" alt="icon" src = "FlappyBird/PipeGreen.png" style="width: 15px">
-            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "FlappyBird/PipeGreen.png", "FlappyBird/PipeYellow.png", "FlappyBird/PipePlastic.png")'>
-              <option value="1">Zelená trubka (výchozí)</option>
-              <option value="2">Žlutá trubka</option>
-              <option value="3">Plastová trubka</option>
+            <label for="pipes">Jídlo:</label>
+            <img class="normalIcon" id="PipeIcon" alt="icon" src = "Snake/eat1.png" style="width: 40px">
+            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "Snake/eat1.png", "Snake/eat2.png", "Snake/eat3.png")'>
+              <option value="1">Jablko (výchozí)</option>
+              <option value="2">Hruška</option>
+              <option value="3">Čokoláda</option>
             </select>
             <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'PipeIcon')"/>
           </div>
           <br><br> <br><br>
           <div class="inputLine">
             <label for="background">Pozadí:</label>
-            <img class="normalIcon" id="backgroundIcon" alt="icon" src = "FlappyBird/BackgroundCity.png" style="width: 60px">
+            <img class="normalIcon" id="backgroundIcon" alt="icon" src = "Snake/background1.png" style="width: 40px">
             <select name="background" id="background" onclick=
-            'onCustomOptionChange("background", "backgroundIcon", "FlappyBird/BackgroundCity.png", "FlappyBird/BackgroundForest.png", "FlappyBird/BackgroundDesert.png")'>
-              <option value="1">Město (výchozí)</option>
-              <option value="2">Les</option>
-              <option value="3">Poušť</option>
+            'onCustomOptionChange("background", "backgroundIcon", "Snake/background1.png", "Snake/background2.png", "Snake/background3.png")'>
+              <option value="1">Zelený (výchozí)</option>
+              <option value="2">Podlaha </option>
+              <option value="3">Tráva </option>
             </select>
             <input type="file" class="file" id="inputBackground" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputBackground', 'backgroundIcon')"/>
           </div>
         </div>
+        <div class="package">
+          <p class="descriptionTitle"> Zvukové efekty: </p>
+          <div class="inputLine">
+            <label for="main">Had:</label>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Snake/eat1.mp3", "Snake/eat2.mp3", "Snake/kokodak.mp3")'>
+              <option value="1">Kousnutí 1 (výchozí)</option>
+              <option value="2">Kousnutí 2 </option>
+            </select>
 
+            <input type="file" class="file" id="inputSound1" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound1', 'flySoundPreview', 'audio2')"/>
+            <audio id="audio2" controls="controls">
+              <source id="flySoundPreview" type="audio/mpeg" src = "Snake/eat1.mp3"> </source>
+            </audio>            
+          </div>
+          <br><br><br> <br><br><br>
+          <div class="inputLine">
+            <label for="main">Zvuk prohry:</label>
+            <select name="character" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "passSoundPreview", "Snake/die1.mp3", "Snake/die2.mp3", "FlappyBird/pass3.wav")'>
+              <option value="1">Náraz 1 (výchozí)</option>
+              <option value="2">Náraz 2</option>
+            </select>
+
+            <input type="file" class="file" id="inputSound2" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound2', 'passSoundPreview', 'audio1')"/>
+            <audio id="audio1" controls="controls">
+              <source id="passSoundPreview" src = "Snake/die1.mp3"> </source>
+            </audio>            
+          </div>
+        </div>
+        <div class="package">
+          <p class="descriptionTitle"> Herní nastavení: </p>
+          <div class="inputLine">
+            <label for="main">Rychlost hada:</label>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+              <option value="1">Normální (výchozí)</option>
+              <option value="2">Rychlá</option>
+              <option value="3">Pomalá</option>
+            </select>          
+          </div>
+        </div>   
         <div class="sendButton">
           <button type="button" class="sendButton" onclick="sendEmail()" > Zaplatit </button>
         </div>
