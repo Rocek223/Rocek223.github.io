@@ -2,6 +2,7 @@
   --scaleWin: 0.3;
   --scaleScr: parseInt(screen.width);
 }
+
 p.mainTitle {
   margin-top: 80px;
   text-align: center;
@@ -73,7 +74,9 @@ button.reset {
 }
 
 div.sendButton {
-  margin-top: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-top: 200px;
 }
 
 button.sendButton {
@@ -86,19 +89,16 @@ button.sendButton {
   text-decoration: none;
   display: inline-block;
   font-size: 100%;
-  margin: 4px 2px;
   cursor: pointer;
-  min-width: 0%;
-  width: 400px;
-  max-width: 100%;
   padding: 15px;
   box-shadow: 0 0.625rem 3.5rem rgba(17,48,77,0.4);
   position: absolute;
   bottom: 0;
-  width: 20vw;
-  height: 3vw;
+  width: 25vw;
+  height: 4vw;
   font-size: 15px;
-  transform: translate(calc(50vw - 10vw), 0);
+  transform: translate(calc(36.5vw), 0);
+  margin-bottom: 100px;
 }
 
 img.resetImage {
@@ -129,6 +129,7 @@ img.normalIcon {
   gap: 10px;
   padding: 10px;
   position: absolute;
+  margin-bottom: 100px;
 }
 
 div.package {
@@ -143,6 +144,7 @@ div.package {
   border-radius: 10px;
   background-color: white;
   float: top;
+
 }
 
 input.file{
@@ -153,7 +155,12 @@ input.file{
 div.inputLine{
   float: left;
 }
-
+audio{
+  scale: 80%;
+  width: 100%;
+  margin-left: 0px;
+  margin-bottom: -15px;
+}
 .vl {
   border-left: 2px solid black;
   height: 20vw;

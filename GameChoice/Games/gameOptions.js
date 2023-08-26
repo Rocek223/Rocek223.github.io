@@ -12,6 +12,7 @@ function onCustomTextureChange(inputFileId, iconPreviewId) {
     document.getElementById(iconPreviewId).src = URL.createObjectURL(file)
   }
 }
+
 function onCheckboxClick() {
   // Get the checkbox
   var checkBox = document.getElementById("default");
@@ -38,18 +39,39 @@ function onPlatformSelected() {
   }
 }
 function onCustomOptionChange(selectionId, iconPreviewId, option1, option2, option3){
+  console.log("cum");
   var select = document.getElementById(selectionId);
   var platformIcon = document.getElementById(iconPreviewId);
 
   if (select.value == 1){
     platformIcon.src = option1;
+    console.log(platformIcon);
 
   }else if(select.value == 2){
     platformIcon.src = option2;
+    console.log(platformIcon);
   }else
   {
     platformIcon.src = option3;
+    console.log(platformIcon);
   }
+}
+function onCustomSoundChange(selectionId, audioPreviewId, audioSourcePreviewId, option1, option2, option3){
+  var select = document.getElementById(selectionId);
+  var audioPreview = document.getElementById(audioPreviewId);
+  var audioSourcePreview = document.getElementById(audioSourcePreviewId);
+
+  if (select.value == 1){
+    audioSourcePreview.src = option1;
+
+  }else if(select.value == 2){
+    audioSourcePreview.src = option2;
+  }else
+  {
+    audioSourcePreview.src = option3;
+  }
+  audioPreview.load();
+
 }
 
 function sendEmail() {
