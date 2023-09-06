@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cz"><head><meta charset="UTF-8">
+  <title>Vlastní hry</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="">
+  <link rel="icon" type="jpg/png" href="pageIcon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link id="cssTopNav" rel="stylesheet" type="text/css" href="topnavPhone.css">
+  <link id="css" rel="stylesheet" type="text/css" href="indexPhone.css">
+
+  </head><body>
+    <top>
+      <ul>
+        <img class="icon" src="VlastniHryTextLogo.png" alt="logo">
+        <li><a class="active" href="index.html">Domů</a></li>
+        <li><a href="#offers">Nabídky</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </top>
+    <content>
+      <div id="intro">        
+        <p class="mainTitle"> Co dát blízkému jako      dárek?     Darujte vlastní počítačovou nebo mobilní hru!  </p>
+        <br>      
+        <p class="mainText"> Chcete pro svoje blízké sehnat dárek, ale už nevíte jaký? <br> Máme pro vás řešení. Nabízíme vytvoření vlastní hry tak, <br> jak to potřebujete, která může být jak na počítač, tak na <br> mobilní zařízení. </p>    
+        <div class="screenshots">    
+          <img class="screenshot" src="screenshot1.png" alt="Screenshot1">
+          <img class="screenshot" src="screenshot2.jpg" alt="Screenshot2"> 
+        </div>
+        <br>
+      </div>
+      <div id="offers">
+        <div class="games-container">
+          <div class="package">
+            <img class="preview" src="betterIcon.jpg" alt="betterIcon">
+            <p class="TextBoxTitle"> <b> Vlastní hra podle předlohy </b> </p class="TextBoxTitle">
+            <br>
+            <p class="TextBoxPrice"> <b> 189<p class="TextBoxPriceKc"> Kč </p> </b>  </p>        
+            <div class="TextBox">
+              <p class="info"> <i>  • Za 5 dní hotovo </i> </p>
+              <p class="info"> <i>  • Výběr 5 různých druhů her</i> </p>
+              <p class="info"> <i>  • Kompletní nastavení hry </i> </p>
+
+            </div>            
+            <form action="GameChoice/gameChoice.html">
+                <button onclick='getPackage("Classic")'> Vybrat předlohu </button>
+              </form>
+          </div>
+          <div class="package">
+            <img class="preview" src="speedIcon.jpg" alt="betterIcon">
+            <p class="TextBoxTitle"> <b> Rychlejší dokončení vlastní hry</b> </p class="TextBoxTitle">
+            <br>
+            <p class="TextBoxPrice"> <b> 249<p class="TextBoxPriceKc"> Kč </p> </b>  </p>        
+            <div class="TextBox">
+              <p class="info"> <i>  • Během 24 hodin hotovo </i> </p>
+              <p class="info"> <i>  • Výběr 5 různých druhů her</i> </p>
+              <p class="info"> <i>  • Kompletní nastavení hry </i> </p>
+
+            </div>            
+            <form action="GameChoice/gameChoice.html">
+                <button onclick='getPackage("fast")'> Vybrat předlohu </button>
+              </form>
+          </div>
+
+        </div>
+      </div>
+    </content>
+  
+
+</body></html>

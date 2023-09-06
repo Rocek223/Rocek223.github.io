@@ -56,6 +56,11 @@ img.screenshot {
   margin-bottom: 10px;
   box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
 }
+img.screenshot:hover {
+  transition: .5s ease;
+  width: 135px;
+  opacity: 0.8;
+}
 .games-container {
   display: grid;
   width: 100vw;

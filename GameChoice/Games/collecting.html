@@ -17,15 +17,16 @@
       <br>      
       <p class="mainTitle"> Nastavení hry:  </p>
       <div class="games-container">
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="firstDescriptionTitle"> Sbírání hub </p>
+          <p class="firstDescription"> <b> <-- </b>Vyzkoušejte si hru  </p>
           <br>
           <p class="firstDescription"> Ovládání: <i> kliknutí myši </i> </p>
           <br>
           <p class="firstDescription"> Cíl hry: <i> sezbírat co nejvíce hub <br> za 30 sekund </i> </p>
-          <iframe src="BuildCollecting/CollectingGame.html"> </iframe>  
+          <iframe class="portrait" src="BuildCollecting/CollectingGame.html"> </iframe>  
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Základní nastavení </p>
           <br>
           <div class="inputLine">
@@ -44,7 +45,7 @@
           <br><br><br>
           <div class="inputLine">
             <label for="icon">Ikona hry:</label> 
-            <img class="gameIcon" id="icon" alt="icon" src = "Collecting/icon.png">
+            <img class="gameIcon" id="icon" alt="icon" name="inputImage" src = "Collecting/icon.png">
             <input type="file" class="file" id="inputIcon" name="avatar" accept="image/png, image/jpeg" onchange="onCustomIconChange('inputIcon', 'icon')"/>
           </div>
           <br><br><br> <br>
@@ -54,11 +55,11 @@
           </div>
           <br><br> <br>
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Grafika: </p>
           <div class="inputLine">
             <label for="main">Sbíraná věc:</label>
-            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "Collecting/item1.png">
+            <img class="normalIcon" name="inputImage" id="mainCharacterIcon" alt="icon" src = "Collecting/item1.png">
             <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Collecting/item1.png", "Collecting/item2.png", "Collecting/item3.png")'>
               <option value="1">Houba (výchozí)</option>
               <option value="2">Čtyřlístek</option>
@@ -70,7 +71,7 @@
 
           <div class="inputLine">
             <label for="background">Pozadí:</label>
-            <img class="normalIcon" id="backgroundIcon" alt="icon" src = "Collecting/background1.png" style="width: 60px">
+            <img class="normalIcon" name="inputImage" id="backgroundIcon" alt="icon" src = "Collecting/background1.png" style="width: 60px">
             <select name="background" id="background" onclick=
             'onCustomOptionChange("background", "backgroundIcon", "Collecting/background1.png", "Collecting/background2.png", "Collecting/background3.png")'>
               <option value="1">Zelená (výchozí)</option>
@@ -80,11 +81,11 @@
             <input type="file" class="file" id="inputBackground" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputBackground', 'backgroundIcon')"/>
           </div>
         </div>
-        <div class="package">
+        <div class="package" style="height: 15vw;">
           <p class="descriptionTitle"> Herní nastavení: </p>
           <div class="inputLine">
             <label for="main">Délka hry:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+            <select name="inputPlayer" id="flySound" onclick='onCustomSoundChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
               <option value="1">30s (výchozí)</option>
               <option value="2">60s</option>
               <option value="3">20s</option>
@@ -93,7 +94,7 @@
           <br> <br> <br> 
           <div class="inputLine">
             <label for="main">Rychlost růstu:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+            <select name="inputPlayer" id="flySound" onclick='onCustomSoundChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
               <option value="1">8s (výchozí)</option>
               <option value="2">6s</option>
               <option value="3">10s</option>
@@ -101,8 +102,11 @@
           </div>
         </div>       
         <div class="sendButton">
-          <button type="button" class="sendButton" onclick="sendEmail()" > Zaplatit </button>
-        </div>
+          <button type="button" class="sendButton" onclick="enableLoading()" >   Pokračovat  </button>
+        </div>  
+        <div id="myProgress"> Počkejte prosím...<div class="loader" id="loading"></div> </div>
+        <form method="post">
+        </form>
         
       </div>
 

@@ -1,5 +1,5 @@
 :root {
-  --scaleWin: 0.3;
+  --scaleWin: 0.5;
   --scaleScr: parseInt(screen.width);
 }
 
@@ -30,7 +30,7 @@ p.firstDescriptionTitle {
   font-weight: bold;
 }
 p.firstDescription {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-right: -250px;
   text-align: center;
   color: #3C3C3C;
@@ -77,12 +77,14 @@ button.reset {
 div.sendButton {
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-top: 200px;
+  margin-top: 300px;
+  padding-right: 0px;
 }
 
 button.sendButton {
+margin-top: 100px;
   float: left;
-  background-color: #1BC300;
+  background-color: #0BC000;
   border-radius: 10px;
   border: none;
   color: white;
@@ -91,8 +93,9 @@ button.sendButton {
   display: inline-block;
   font-size: 100%;
   cursor: pointer;
-  padding: 15px;
-  box-shadow: 0 0.625rem 3.5rem rgba(17,48,77,0.4);
+  padding: 0px;
+
+  /*box-shadow: 0 0.625rem 3.5rem rgba(17,48,77,0.4);*/
   position: absolute;
   bottom: 0;
   width: 25vw;
@@ -109,6 +112,8 @@ img.resetImage {
 button.reset:hover {
   background-color: #DCDCDC;
 }
+
+
 
 
 img.gameIcon {
@@ -138,7 +143,7 @@ div.package {
   text-align: left;
   background-color: white;
   width: 35vw;
-  height: 25vw;
+  
   padding: 10px 50px;
   margin-top: 30px;
   margin-left: 28vw;
@@ -147,6 +152,7 @@ div.package {
   float: top;
 
 }
+
 
 input.file{
   margin-top: 10px;
@@ -170,19 +176,131 @@ audio{
   margin-top: -50px;
   float: left;
 }
-
-iframe {
+iframe.landscape {
+  width: 75vw;
+  height: 50vw;
+  border-radius: 10px;
+  float: left;
+  border-width:0;
+  margin-top: -250px;
+  -ms-zoom: 0.75;
+  -moz-transform: scale(0.23);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.23);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.23);
+  -webkit-transform-origin: 0 0;
+}
+iframe.portrait {
   width: 50vw;
   height: 75vw;
   border-radius: 10px;
   float: left;
   border-width:0;
-  margin-top: -220px;
-  -ms-zoom: 0.75;
+  position: absolute;
+  top: -2%;
+  left: 37%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -ms-zoom: 1;
   -moz-transform: scale(var(--scaleWin));
   -moz-transform-origin: 0 0;
   -o-transform: scale(var(--scaleWin));
   -o-transform-origin: 0 0;
   -webkit-transform: scale(calc(var(--scaleWin) * 1));
   -webkit-transform-origin: 0 0;
+}
+img.successIcon{
+  float: top;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+p.doneTitle{
+  margin-top: 20%;
+  text-align: center;
+  color: #3C3C3C;
+  font-size: 2.5vw;
+
+}
+p.doneDescription{
+  float: top;
+  margin-top: 3vw;
+  text-align: center;
+  color: #3C3C3C;
+  font-size: 1vw;
+}
+button.backButton {
+  float: top;
+  background-color: #0BC000;
+  border-radius: 0.75vw;
+  border: none;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 10vw;
+  height: 3vw;
+  font-size: 1vw;
+  display: block;
+  margin: auto;
+  margin-top: -5vw;
+}
+.centerContent{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.loader {
+  margin-right: 1vw;
+  visibility: hidden;
+  border: 7px solid #ffffff;
+  border-radius: 50%;
+  border-top: 7px solid #0CA600;
+  width: 1vw;
+  height: 1vw;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  display: block;
+float: right;
+
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(340deg); }
+}
+#myProgress {
+  visibility: hidden;
+
+  background-color: #999;
+
+  margin-top: 190px;
+  float: left;
+display: block;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 25px;
+  cursor: pointer;
+  padding: 0px;
+  width: 25vw;
+  /*box-shadow: 0 0.625rem 3.5rem rgba(17,48,77,0.4);*/
+  position: absolute;
+  bottom: 0;
+  height: 2vw;
+
+  transform: translate(calc(37.2vw), 3vw);
+  margin-bottom: 100px;
 }

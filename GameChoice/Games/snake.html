@@ -17,15 +17,16 @@
       <br>      
       <p class="mainTitle"> Nastavení hry:  </p>
       <div class="games-container">
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="firstDescriptionTitle"> Had </p>
+          <p class="firstDescription"> <b> <-- </b>Vyzkoušejte si hru  </p>
           <br>
-          <p class="firstDescription"> Ovládání: <i> šipky </i> </p>
+          <p class="firstDescription"> Ovládání: <i> šipky, w, a, s, d </i> </p>
           <br>
           <p class="firstDescription"> Cíl hry: <i> sníst co nejvíce jablek </i> </p>
-          <iframe src="BuildSnake/SnakeGame.html"> </iframe>  
+          <iframe class="portrait" src="BuildSnake/SnakeGame.html"> </iframe>  
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Základní nastavení </p>
           <br>
           <div class="inputLine">
@@ -44,7 +45,7 @@
           <br><br><br>
           <div class="inputLine">
             <label for="icon">Ikona hry:</label> 
-            <img class="gameIcon" id="icon" alt="icon" src = "Snake/icon.png">
+            <img class="gameIcon" id="icon" alt="icon" name="inputImage" src = "Snake/icon.png">
             <input type="file" class="file" id="inputIcon" name="avatar" accept="image/png, image/jpeg" onchange="onCustomIconChange('inputIcon', 'icon')"/>
           </div>
           <br><br><br> <br>
@@ -54,11 +55,11 @@
           </div>
           <br><br> <br>
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Grafika: </p>
           <div class="inputLine">
             <label for="main">Had:</label>
-            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "Snake/snake1.png">
+            <img class="normalIcon" name="inputImage" id="mainCharacterIcon" alt="icon" src = "Snake/snake1.png">
             <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Snake/snake1.png", "Snake/snake2.png", "Snake/snake3.png")'>
               <option value="1">Modrý (výchozí)</option>
               <option value="2">Žlutý</option>
@@ -69,18 +70,18 @@
           <br><br><br> <br><br><br>
           <div class="inputLine">
             <label for="pipes">Jídlo:</label>
-            <img class="normalIcon" id="PipeIcon" alt="icon" src = "Snake/eat1.png" style="width: 40px">
-            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "Snake/eat1.png", "Snake/eat2.png", "Snake/eat3.png")'>
+            <img class="normalIcon" name="inputImage" id="Food" alt="icon" src = "Snake/eat1.png" style="width: 40px">
+            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "Food", "Snake/eat1.png", "Snake/eat2.png", "Snake/eat3.png")'>
               <option value="1">Jablko (výchozí)</option>
               <option value="2">Hruška</option>
               <option value="3">Čokoláda</option>
             </select>
-            <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'PipeIcon')"/>
+            <input type="file" class="file" id="inputPipe" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputPipe', 'Food')"/>
           </div>
           <br><br> <br><br>
           <div class="inputLine">
             <label for="background">Pozadí:</label>
-            <img class="normalIcon" id="backgroundIcon" alt="icon" src = "Snake/background1.png" style="width: 40px">
+            <img class="normalIcon" name="inputImage" id="backgroundIcon" alt="icon" src = "Snake/background1.png" style="width: 40px">
             <select name="background" id="background" onclick=
             'onCustomOptionChange("background", "backgroundIcon", "Snake/background1.png", "Snake/background2.png", "Snake/background3.png")'>
               <option value="1">Zelený (výchozí)</option>
@@ -90,39 +91,39 @@
             <input type="file" class="file" id="inputBackground" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputBackground', 'backgroundIcon')"/>
           </div>
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Zvukové efekty: </p>
           <div class="inputLine">
             <label for="main">Had:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Snake/eat1.mp3", "Snake/eat2.mp3", "Snake/kokodak.mp3")'>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Snake/eat1.mp3", "Snake/eat2.mp3", "Snake/kokodak.mp3" "inputSound1")'>
               <option value="1">Kousnutí 1 (výchozí)</option>
               <option value="2">Kousnutí 2 </option>
             </select>
 
-            <input type="file" class="file" id="inputSound1" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound1', 'flySoundPreview', 'audio2')"/>
+            <input type="file" class="file" id="inputSound1" name="inputAudio" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound1', 'flySoundPreview', 'audio2')"/>
             <audio id="audio2" controls="controls">
-              <source id="flySoundPreview" type="audio/mpeg" src = "Snake/eat1.mp3"> </source>
+              <source id="flySoundPreview" type="audio/mpeg" name="sourceAudio" src = "Snake/eat1.mp3"> </source>
             </audio>            
           </div>
           <br><br><br> <br><br><br>
           <div class="inputLine">
             <label for="main">Zvuk prohry:</label>
-            <select name="character" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "passSoundPreview", "Snake/die1.mp3", "Snake/die2.mp3", "FlappyBird/pass3.wav")'>
+            <select name="character" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "passSoundPreview", "Snake/die1.mp3", "Snake/die2.mp3", "FlappyBird/pass3.wav", "inputSound2")'>
               <option value="1">Náraz 1 (výchozí)</option>
               <option value="2">Náraz 2</option>
             </select>
 
-            <input type="file" class="file" id="inputSound2" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound2', 'passSoundPreview', 'audio1')"/>
+            <input type="file" class="file" id="inputSound2" name="inputAudio" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound2', 'passSoundPreview', 'audio1')"/>
             <audio id="audio1" controls="controls">
-              <source id="passSoundPreview" src = "Snake/die1.mp3"> </source>
+              <source id="passSoundPreview" name="sourceAudio" src = "Snake/die1.mp3"> </source>
             </audio>            
           </div>
         </div>
-        <div class="package">
+        <div class="package" style="height: 15vw;">
           <p class="descriptionTitle"> Herní nastavení: </p>
           <div class="inputLine">
             <label for="main">Rychlost hada:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+            <select name="inputPlayer" id="flySound">
               <option value="1">Normální (výchozí)</option>
               <option value="2">Rychlá</option>
               <option value="3">Pomalá</option>
@@ -130,8 +131,11 @@
           </div>
         </div>   
         <div class="sendButton">
-          <button type="button" class="sendButton" onclick="sendEmail()" > Zaplatit </button>
-        </div>
+          <button type="button" class="sendButton" onclick="enableLoading()" >   Pokračovat  </button>
+        </div>  
+        <div id="myProgress"> Počkejte prosím...<div class="loader" id="loading"></div> </div>
+        <form method="post">
+        </form>
         
       </div>
 

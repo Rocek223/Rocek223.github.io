@@ -4,10 +4,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="">
   <link rel="icon" type="jpg/png" href="pageIcon.png">
-
-  <link rel="stylesheet" type="text/css" href="topnav.css">
-  <link rel="stylesheet" type="text/css" href="index.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link id="cssTopNav" rel="stylesheet" type="text/css" href="topnav.css">
+  <link id="css" rel="stylesheet" type="text/css" href="index.css">
+  <script>
+      function detectMob() {
+    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
+  }
+  if(detectMob() == true){
+    console.log("nig");
+    document.getElementById("css").href = "indexPhone.css";
+    document.getElementById("cssTopNav").href = "topnavPhone.css";
+    window.open("indexPhone.html", "_self");
+  }
+  </script>
   </head><body>
     <top>
       <ul>
@@ -18,74 +28,49 @@
       </ul>
     </top>
     <content>
-      <div id="intro">
+      <div id="intro">             
+  
         <img class="screenshot" src="screenshot1.png" alt="Screenshot1">
         <img class="screenshot" src="screenshot2.jpg" alt="Screenshot2"> 
-        <p class="mainTitle"> Pořiďte svým blízkým <br> vlastní mobilní hru  </p>
+        <p class="mainTitle"> Co dát blízkému jako dárek? <br> Darujte vlastní počítačovou nebo mobilní hru!  </p>
         <br>      
+        <p class="mainText"> Chcete pro svoje blízké sehnat dárek, ale už nevíte jaký? <br> Máme pro vás řešení. Nabízíme vytvoření vlastní hry tak, <br> jak to potřebujete, která může být jak na počítač, tak na <br> mobilní zařízení. </p>    
 
-        <p class="mainText"> Chcete pro svoje blízké sehnat dárek, ale už nevíte jaký? <br> Máme pro vás řešení. Nabízíme vytvoření vlastní hry tak, <br> jak to potřebujete, která může být jak na počítač, tak na <br> mobilní zařízení. </p>
         <br>
       </div>
       <div id="offers">
-        <div class="package1">
-          <img class="preview" src="fasterIcon.jpg" alt="fasterIcon">
-          <div class="TextBoxTitle">
-            <p2> <b> Rychlejší volba </b> </p2>
-          </div>
-          <div class="TextBoxPrice">
-            <p2> <b> Od 499 kč </b> </p2>        
-          </div>
-          <div class="TextBox">
-            <form action="GameChoice/gameChoice.html">
-              <button> Více informací </button>
-            </form>
+        <div class="games-container">
+          <div class="package">
+            <img class="preview" src="betterIcon.jpg" alt="betterIcon">
+            <p class="TextBoxTitle"> <b> Vlastní hra podle předlohy </b> </p class="TextBoxTitle">
             <br>
-            <hr>
-            <p2> Rychlejší a levnější řešení: </p2>
-            <br>
-            <img class="tick" src="tick.jpg" alt="Tick">
-            <p2> 5 různých šablon </p2> 
-            <br>
-            <img class="tick" src="tick.jpg" alt="Tick">
-            
-            <p2> Méně věcí lze ve hře upravit </p2> 
-            <br>
-            <img class="tick" src="tick.jpg" alt="Tick">
-            
-            <p2> Za 5 dní hotovo </p2> 
-            <br>
-          </div>
-        </div>
+            <p class="TextBoxPrice"> <b> 189<p class="TextBoxPriceKc"> Kč </p> </b>  </p>        
+            <div class="TextBox">
+              <p class="info"> <i>  • Za 5 dní hotovo </i> </p>
+              <p class="info"> <i>  • Výběr 5 různých druhů her</i> </p>
+              <p class="info"> <i>  • Kompletní nastavení hry </i> </p>
 
-        <div class="package2">
-          <img class="preview" src="betterIcon.jpg" alt="betterIcon">
-          <div class="TextBoxTitle">
-            <p2> <b> Kvalitnější hra </b> </p2>
-          </div>
-          <div class="TextBoxPrice">
-            <p2> <b> Od 999 kč </b> </p2>        
-          </div>
-          <div class="TextBox">
+            </div>            
             <form action="GameChoice/gameChoice.html">
-              <button> Více informací </button>
-            </form>
-            <br>
-            <hr>
-            <p2> Kvalitnější a detailnější řešení: </p2>
-            <br>
-            <img class="tick" src="tick.jpg" alt="Tick">
-            <p2> 20 různých šablon </p2> 
-            <br>
-            <img class="tick" src="tick.jpg" alt="Tick">
-            
-            <p2> Lze téměř vše ve hře upravit </p2> 
-            <br>
-            <img class="tick" src="tick.jpg" alt="Tick">
-            
-            <p2> Za 14 dní hotovo </p2> 
-            <br>
+                <button onclick='getPackage("Classic")'> Vybrat předlohu </button>
+              </form>
           </div>
+          <div class="package">
+            <img class="preview" src="speedIcon.jpg" alt="betterIcon">
+            <p class="TextBoxTitle"> <b> Rychlejší dokončení vlastní hry</b> </p class="TextBoxTitle">
+            <br>
+            <p class="TextBoxPrice"> <b> 249<p class="TextBoxPriceKc"> Kč </p> </b>  </p>        
+            <div class="TextBox">
+              <p class="info"> <i>  • Během 24 hodin hotovo </i> </p>
+              <p class="info"> <i>  • Výběr 5 různých druhů her</i> </p>
+              <p class="info"> <i>  • Kompletní nastavení hry </i> </p>
+
+            </div>            
+            <form action="GameChoice/gameChoice.html">
+                <button onclick='getPackage("fast")'> Vybrat předlohu </button>
+              </form>
+          </div>
+
         </div>
       </div>
     </content>

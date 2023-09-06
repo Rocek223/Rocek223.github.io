@@ -18,31 +18,43 @@ p.mainText {
   text-align: left;
   float: top;
 }
+p.info {
+  line-height: 1.5;
+  color: #3C3C3C;
+  font-size: 1.2vw;
+  text-align: center;
+}
+p.TextBoxPrice {
+  color: #3C3C3C;
+  font-size: 50px;
+  text-align: center;
+  display: inline;
+}
+p.TextBoxPriceKc {
+  color: #3C3C3C;
+  font-size: 30px;
+  text-align: center;
+  display: inline;
+}
+
 hr {
   height:1px;
   border-width:0;
   background-color:#000000;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
-div.TextBoxTitle {
-  padding: 27px 0px;
+p.TextBoxTitle {
+  margin-top: 25px;
   color: #3C3C3C;
   font-size: 23px;
   text-align: center;
 }
 
-div.TextBoxPrice {
-  padding-top: 20px;
-  padding-bottom: 40px;
-  color: #3C3C3C;
-  font-size: 35px;
-  text-align: left;
-}
-
 div.TextBox {
-  line-height: 3;
-  padding-bottom: 20px;
+   margin-top: 50px;
+  margin-bottom: 50px;
+  line-height: 10;
   color: #3C3C3C;
   font-size: 1.3vw;
   text-align: left;
@@ -58,7 +70,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 100%;
-  margin: 4px 2px;
+  margin: 20px 2px;
   cursor: pointer;
   min-width: 0%;
   width: 400px;
@@ -77,7 +89,8 @@ body {
 }
 
 img.preview {
-  padding-top: 0px;
+  margin-top: 20px;
+  margin-right: 10px;
   float: left;
   width: 50px;
   max-width: 100%;
@@ -114,6 +127,20 @@ div.package1 {
   border-radius: 10px;
   background-color: white;
 }
+div.package {
+  box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
+  text-align: center;
+  background-color: white;
+  width: auto;
+  height: auto;
+  padding: 0px 40px;
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: white;
+  transform: translate(-50%, auto);
+  float: left;
+}
+
 
 div.package2 {
   box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
@@ -138,4 +165,11 @@ html {
 
 #offers {
   height: 600px;
+}
+.games-container {
+  display: grid;
+  height: 400px;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fill, 33vw);
+  margin-top: 50px;
 }

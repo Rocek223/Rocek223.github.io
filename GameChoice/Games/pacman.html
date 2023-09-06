@@ -18,21 +18,22 @@
       emailjs.init("XOjQtU4szWkndNfSV");
    })();
 </script>
-  </head><body>
-
+</head>
+  <body>
     <content>
       <br>      
       <p class="mainTitle"> Nastavení hry:  </p>
       <div class="games-container">
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="firstDescriptionTitle"> Pacman </p>
+          <p class="firstDescription"> <b> <-- </b>Vyzkoušejte si hru  </p>
           <br>
-          <p class="firstDescription"> Ovládání: <i> šipky </i> </p>
+          <p class="firstDescription"> Ovládání: <i> šipky, w, a, s, d </i> </p>
           <br>
           <p class="firstDescription"> Cíl hry: <i> sebrat všechny body </i> </p>
-          <iframe src="BuildPacman/PacmanGame.html"> </iframe>  
+          <iframe class="portrait" src="BuildPacman/PacmanGame.html"> </iframe>  
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Základní nastavení </p>
           <br>
           <div class="inputLine">
@@ -62,7 +63,7 @@
           <br><br> <br>
 
         </div>
-        <div class="package">
+        <div class="package" style="height: 30vw;">
           <p class="descriptionTitle"> Grafika: </p>
           <div class="inputLine">
             <label for="main">Hlavní postava:</label>
@@ -131,39 +132,39 @@
           </div>
 
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Zvukové efekty: </p>
           <div class="inputLine">
             <label for="main">Pacman:</label>
-            <select name="input" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Pacman/eat1.mp3", "Pacman/eat2.mp3", "FlappyBird/kokodak.mp3")'>
+            <select name="input" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "eatSoundPreview", "Pacman/eat1.mp3", "Pacman/eat2.mp3", "FlappyBird/kokodak.mp3", "inputSound1")'>
               <option value="1">Pacman (výchozí)</option>
               <option value="2">Kousání </option>
             </select>
 
-            <input type="file" class="file" id="inputSound1" name="inputAudio" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound1', 'flySoundPreview', 'audio2')"/>
+            <input type="file" name="inputAudio" class="file" id="inputSound1" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound1', 'eatSoundPreview', 'audio2')"/>
             <audio id="audio2" controls="controls">
-              <source id="flySoundPreview" type="audio/mpeg" src = "Pacman/eat1.mp3"> </source>
+              <source id="eatSoundPreview" type="audio/mpeg" src = "Pacman/eat1.mp3" name="sourceAudio"> </source>
             </audio>            
           </div>
           <br><br><br> <br><br><br>
           <div class="inputLine">
             <label for="main">Zvuk prohry:</label>
-            <select name="input" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "passSoundPreview", "Pacman/kill1.mp3", "Pacman/kill2.mp3", "FlappyBird/pass3.wav")'>
+            <select name="input" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "dieSoundPreview", "Pacman/kill1.mp3", "Pacman/kill2.mp3", "FlappyBird/pass3.wav", "inputSound2")'>
               <option value="1">Klasika (výchozí)</option>
               <option value="2">Nůž</option>
             </select>
 
-            <input type="file" class="file" id="inputSound2" name="inputAudio" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound2', 'passSoundPreview', 'audio1')"/>
+            <input type="file" name="inputAudio" class="file" id="inputSound2" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound2', 'dieSoundPreview', 'audio1')"/>
             <audio id="audio1" controls="controls">
-              <source id="passSoundPreview" src = "Pacman/kill1.mp3"> </source>
+              <source id="dieSoundPreview" src = "Pacman/kill1.mp3" name="sourceAudio"> </source>
             </audio>            
           </div>
         </div>
-        <div class="package">
+        <div class="package" style="height: 15vw;">
           <p class="descriptionTitle"> Herní nastavení: </p>
           <div class="inputLine">
             <label for="main">Počet bodů:</label>
-            <select name="input" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+            <select name="inputPlayer" id="PocetBodu">
               <option value="1">38 (výchozí)</option>
               <option value="2">28</option>
               <option value="3">20</option>
@@ -172,7 +173,7 @@
           <br><br><br>
           <div class="inputLine">
             <label for="main">Rychlost hráče:</label>
-            <select name="input" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio", "flySoundPreview", "FlappyBird/fly1.mp3", "FlappyBird/fly2.mp3", "FlappyBird/kokodak.mp3")'>
+            <select name="inputPlayer" id="Speed">
               <option value="1">Normální (výchozí)</option>
               <option value="2">Rychlá</option>
               <option value="3">Pomalá</option>
@@ -180,13 +181,11 @@
           </div>
         </div>      
         <div class="sendButton">
-          <button type="button" class="sendButton" onclick="sendEmail()" > Zaplatit </button>
-        </div>   
-      </div>
+          <button type="button" class="sendButton" onclick="enableLoading()" >   Pokračovat  </button>
+        </div>  
+        <div id="myProgress"> Počkejte prosím...<div class="loader" id="loading"></div> </div>
         <form method="post">
-    <input type="button" value="Send Email" 
-        onclick="sendEmail()" />
-  </form>
+        </form>
     </content>
-
-</body></html>
+  </body>
+</html>

@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Flappy Bird</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <title>FlappyBird</title>
+    <link rel="shortcut icon"  href="../FlappyBird/FlappyBirdIcon.png">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=600 height=960></canvas>
+      <canvas id="unity-canvas" width=400 height=700></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Flappy Bird</div>
+        <div id="unity-build-title">FlappyBird</div>
       </div>
     </div>
     <script>
@@ -56,14 +56,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/sdfghjhgfds.loader.js";
+      var loaderUrl = buildUrl + "/BuildFlappyBird.loader.js";
       var config = {
-        dataUrl: buildUrl + "/sdfghjhgfds.data.br",
-        frameworkUrl: buildUrl + "/sdfghjhgfds.framework.js.br",
-        codeUrl: buildUrl + "/sdfghjhgfds.wasm.br",
+        dataUrl: buildUrl + "/BuildFlappyBird.data",
+        frameworkUrl: buildUrl + "/BuildFlappyBird.framework.js",
+        codeUrl: buildUrl + "/BuildFlappyBird.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "VlastniHryCC000",
-        productName: "Flappy Bird",
+        productName: "FlappyBird",
         productVersion: "1.2",
         showBanner: unityShowBanner,
       };
@@ -95,8 +95,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "600px";
-        canvas.style.height = "960px";
+        canvas.style.width = "400px";
+        canvas.style.height = "700px";
       }
 
       loadingBar.style.display = "block";

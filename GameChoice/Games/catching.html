@@ -17,15 +17,16 @@
       <br>      
       <p class="mainTitle"> Nastavení hry:  </p>
       <div class="games-container">
-        <div class="package">
+        <div class="package" style="height: 20vw;">
           <p class="firstDescriptionTitle"> Chytání do košíku </p>
+          <p class="firstDescription"> <b> <-- </b>Vyzkoušejte si hru  </p>
           <br>
           <p class="firstDescription"> Ovládání: <i> pohyb myši </i> </p>
           <br>
           <p class="firstDescription"> Cíl hry: <i> sebrat co nejvíce jablek </i> </p>
-          <iframe src="BuildCatching/CatchingGame.html"> </iframe>  
+          <iframe class="landscape" src="BuildCatching/CatchingGame.html"> </iframe>  
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Základní nastavení </p>
           <br>
           <div class="inputLine">
@@ -44,7 +45,7 @@
           <br><br><br>
           <div class="inputLine">
             <label for="icon">Ikona hry:</label> 
-            <img class="gameIcon" id="icon" alt="icon" src = "Catching/icon.png">
+            <img class="gameIcon" id="icon" alt="icon" name="inputImage" src = "Catching/icon.png">
             <input type="file" class="file" id="inputIcon" name="avatar" accept="image/png, image/jpeg" onchange="onCustomIconChange('inputIcon', 'icon')"/>
           </div>
           <br><br><br> <br>
@@ -54,11 +55,11 @@
           </div>
           <br><br> <br>
         </div>
-        <div class="package">
+        <div class="package" style="height: 25vw;">
           <p class="descriptionTitle"> Grafika: </p>
           <div class="inputLine">
             <label for="main">Padající předmět:</label>
-            <img class="normalIcon" id="mainCharacterIcon" alt="icon" src = "Catching/item1.png">
+            <img class="normalIcon" name="inputImage" id="mainCharacterIcon" alt="icon" src = "Catching/item1.png">
             <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Catching/item1.png", "Catching/item2.png", "Catching/item3.png")'>
               <option value="1">Jablko (výchozí)</option>
               <option value="2">Peníze</option>
@@ -69,7 +70,7 @@
           <br><br><br> <br><br><br>
           <div class="inputLine">
             <label for="pipes">Košík:</label>
-            <img class="normalIcon" id="PipeIcon" alt="icon" src = "Catching/catch1.png" style="width: 60px">
+            <img class="normalIcon" name="inputImage" id="PipeIcon" alt="icon" src = "Catching/catch1.png" style="width: 60px">
             <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "Catching/catch1.png", "Catching/catch3.png", "Catching/catch2.png")'>
               <option value="1">Normální košík (výchozí)</option>
               <option value="2">Ruce</option>
@@ -80,7 +81,7 @@
           <br><br> <br><br>
           <div class="inputLine">
             <label for="background">Pozadí:</label>
-            <img class="normalIcon" id="backgroundIcon" alt="icon" src = "Catching/background1.png" style="width: 70px">
+            <img class="normalIcon" name="inputImage" id="backgroundIcon" alt="icon" src = "Catching/background1.png" style="width: 70px">
             <select name="background" id="background" onclick=
             'onCustomOptionChange("background", "backgroundIcon", "Catching/background1.png", "Catching/background2.png", "Catching/background3.png")'>
               <option value="1">Louka (výchozí)</option>
@@ -90,27 +91,27 @@
             <input type="file" class="file" id="inputBackground" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputBackground', 'backgroundIcon')"/>
           </div>
         </div>
-        <div class="package">
+        <div class="package" style="height: 15vw;">
           <p class="descriptionTitle"> Zvukové efekty: </p>
           <div class="inputLine">
             <label for="main">Zvuk chycení předmětu:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Catching/get1.mp3", "Catching/get2.wav", "Catching/get3.mp3")'>
+            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Catching/get1.mp3", "Catching/get2.wav", "Catching/get3.mp3", "inputSound1")'>
               <option value="1">Spadnutí (výchozí)</option>
               <option value="2">Cinknutí </option>
               <option value="3">Zvuk peněz </option>
             </select>
 
-            <input type="file" class="file" id="inputSound1" name="avatar" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound1', 'flySoundPreview', 'audio2')"/>
+            <input type="file" class="file" id="inputSound1" name="inputAudio" accept="audio/mpeg, audio/wav" onchange="onCustomSoundChange('inputSound1', 'flySoundPreview', 'audio2')"/>
             <audio id="audio2" controls="controls">
-              <source id="flySoundPreview" type="audio/mpeg" src = "Catching/get1.mp3"> </source>
+              <source id="flySoundPreview" name="sourceAudio" type="audio/mpeg" src = "Catching/get1.mp3"> </source>
             </audio>            
           </div>
         </div>
-        <div class="package">
+        <div class="package" style="height: 10vw;">
           <p class="descriptionTitle"> Herní nastavení: </p>
           <div class="inputLine">
             <label for="main">Obtížnost:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio", "flySoundPreview", "Catching/fly1.mp3", "Catching/fly2.mp3", "Catching/kokodak.mp3")'>
+            <select name="inputPlayer" id="flySound">
               <option value="1">Normální (výchozí)</option>
               <option value="2">Jednoduchá</option>
               <option value="3">Obtížná</option>
@@ -118,8 +119,11 @@
           </div>
         </div>  
         <div class="sendButton">
-          <button type="button" class="sendButton" onclick="sendEmail()" > Zaplatit </button>
-        </div>
+          <button type="button" class="sendButton" onclick="enableLoading()" >   Pokračovat  </button>
+        </div>  
+        <div id="myProgress"> Počkejte prosím...<div class="loader" id="loading"></div> </div>
+        <form method="post">
+        </form>
         
       </div>
 
