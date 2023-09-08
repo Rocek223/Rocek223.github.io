@@ -3,7 +3,6 @@ ul {
   margin: 50;
   padding: 0;
   overflow: hidden;
-  /* border: 1px solid #e7e7e7; */
   background-color: #ffffff;
   border-radius: 10px;
   font-size: 18px;
@@ -13,14 +12,17 @@ ul {
 li {
   margin: 50;
   padding: 50;
+  height: 7vh;
   float: left;
 }
 
 li a {
-  display: block;
   color: #666;
+  font-size: 2vh;
+  padding: 2.4vh 2vh;
+  max-width: 100%;
+  float: left;
   text-align: center;
-  padding: 25px 30px;
   text-decoration: none;
 }
 
@@ -38,7 +40,7 @@ li a.active {
 img.icon {
   margin-left: 20px;
   margin-right: 20px;
-  width: 118px;
+  width: 10vh;
   max-width: 100%;
   height: auto;
   float: left;

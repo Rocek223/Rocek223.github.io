@@ -5,18 +5,15 @@
   <link rel="stylesheet" href="">
   <link rel="icon" type="jpg/png" href="pageIcon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link id="cssTopNav" rel="stylesheet" type="text/css" href="topnav.css">
+  <link id="topnav" rel="stylesheet" type="text/css" href="topnav.css">
   <link id="css" rel="stylesheet" type="text/css" href="index.css">
   <script>
-      function detectMob() {
-    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
-  }
-  if(detectMob() == true){
-    console.log("nig");
-    document.getElementById("css").href = "indexPhone.css";
-    document.getElementById("cssTopNav").href = "topnavPhone.css";
-    window.open("indexPhone.html", "_self");
-  }
+    function detectMob() {
+      return ((window.innerHeight / window.innerWidth) > 1.8);
+    }
+    if(detectMob() == true) {
+      window.open("indexMobile.html", "_self");
+    }
   </script>
   </head><body>
     <top>

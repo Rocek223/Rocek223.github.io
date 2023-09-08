@@ -170,6 +170,6 @@ html {
   display: grid;
   height: 400px;
   justify-content: space-evenly;
-  grid-template-columns: repeat(auto-fill, 33vw);
+  grid-template-columns: repeat(auto-fill, 80vw);
   margin-top: 50px;
 }
