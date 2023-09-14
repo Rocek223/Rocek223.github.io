@@ -62,9 +62,9 @@
         frameworkUrl: buildUrl + "/BuildFlappyBird.framework.js",
         codeUrl: buildUrl + "/BuildFlappyBird.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "VlastniHryCC000",
-        productName: "FlappyBird",
-        productVersion: "1.2",
+        companyName: "0805743",
+        productName: "Flappy Bird",
+        productVersion: "1.50",
         showBanner: unityShowBanner,
       };
 
@@ -108,9 +108,7 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
+
         }).catch((message) => {
           alert(message);
         });

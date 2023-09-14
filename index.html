@@ -5,15 +5,18 @@
   <link rel="stylesheet" href="">
   <link rel="icon" type="jpg/png" href="pageIcon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link id="topnav" rel="stylesheet" type="text/css" href="topnav.css">
+  <link id="cssTopNav" rel="stylesheet" type="text/css" href="topnav.css">
   <link id="css" rel="stylesheet" type="text/css" href="index.css">
   <script>
-    function detectMob() {
-      return ((window.innerHeight / window.innerWidth) > 1.8);
-    }
-    if(detectMob() == true) {
-      window.open("indexMobile.html", "_self");
-    }
+      function detectMob() {
+    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
+  }
+  if(detectMob() == true){
+    console.log("nig");
+    document.getElementById("css").href = "indexPhone.css";
+    document.getElementById("cssTopNav").href = "topnavPhone.css";
+    window.open("indexPhone.html", "_self");
+  }
   </script>
   </head><body>
     <top>
@@ -28,7 +31,7 @@
       <div id="intro">             
   
         <img class="screenshot" src="screenshot1.png" alt="Screenshot1">
-        <img class="screenshot" src="screenshot2.jpg" alt="Screenshot2"> 
+        <img class="screenshot" src="screenshot2.png" alt="Screenshot2"> 
         <p class="mainTitle"> Co dát blízkému jako dárek? <br> Darujte vlastní počítačovou nebo mobilní hru!  </p>
         <br>      
         <p class="mainText"> Chcete pro svoje blízké sehnat dárek, ale už nevíte jaký? <br> Máme pro vás řešení. Nabízíme vytvoření vlastní hry tak, <br> jak to potřebujete, která může být jak na počítač, tak na <br> mobilní zařízení. </p>    

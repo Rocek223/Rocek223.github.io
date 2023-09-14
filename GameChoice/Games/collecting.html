@@ -8,16 +8,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link rel="icon" type="jpg/png" href="../../pageIcon.png">  
   <link rel="stylesheet" type="text/css" href="topnav.css">
-  <link rel="stylesheet" type="text/css" href="gameOptions.css">
+  <link id="CSS" rel="stylesheet" type="text/css" href="gameOptions.css">
   <script src="gameOptions.js"></script>
-
+  <script>
+    function detectMob() {
+      return ((window.innerHeight / window.innerWidth) > 1.3);
+    }
+    if(detectMob() == true) {
+      document.getElementById("CSS").href = "gameOptionsMobile.css";
+    }
+  </script>
   </head><body>
 
     <content>
       <br>      
       <p class="mainTitle"> Nastavení hry:  </p>
       <div class="games-container">
-        <div class="package" style="height: 25vw;">
+        <div class="package" style="height: 400px;">
           <p class="firstDescriptionTitle"> Sbírání hub </p>
           <p class="firstDescription"> <b> <-- </b>Vyzkoušejte si hru  </p>
           <br>
@@ -26,7 +33,7 @@
           <p class="firstDescription"> Cíl hry: <i> sezbírat co nejvíce hub <br> za 30 sekund </i> </p>
           <iframe class="portrait" src="BuildCollecting/CollectingGame.html"> </iframe>  
         </div>
-        <div class="package" style="height: 25vw;">
+        <div class="package" style="height: 400px;">
           <p class="descriptionTitle"> Základní nastavení </p>
           <br>
           <div class="inputLine">
@@ -55,7 +62,7 @@
           </div>
           <br><br> <br>
         </div>
-        <div class="package" style="height: 25vw;">
+        <div class="package" style="height: 400px;">
           <p class="descriptionTitle"> Grafika: </p>
           <div class="inputLine">
             <label for="main">Sbíraná věc:</label>
@@ -81,7 +88,7 @@
             <input type="file" class="file" id="inputBackground" name="avatar" accept="image/png, image/jpeg" onchange="onCustomTextureChange('inputBackground', 'backgroundIcon')"/>
           </div>
         </div>
-        <div class="package" style="height: 15vw;">
+        <div class="package" style="min-height: 400px;">
           <p class="descriptionTitle"> Herní nastavení: </p>
           <div class="inputLine">
             <label for="main">Délka hry:</label>
@@ -100,7 +107,29 @@
               <option value="3">10s</option>
             </select>          
           </div>
-        </div>       
+          <br><br><br>
+          <div class="inputLine">
+            <label for="main">Dodatečné nastavení (pokud chcete něco dodat k úpravě hry):</label> <br>
+            <textarea id="textInputBox" class="optionalText" name="Text1" cols="40" rows="5"></textarea>     
+          </div>
+        </div>      
+        <div class="package" style="min-height: 300px;">
+          <p class="descriptionTitle"> Nastavení přání: </p>
+          <br><br>
+          <div class="inputLine">
+            <label for="main">Barva pozadí:</label>
+            <select name="inputPlayer" id="Color">
+              <option value="1">Fialová (výchozí)</option>
+              <option value="2">Zelená</option>
+              <option value="3">Modrá</option>
+            </select>          
+          </div>
+          <br><br><br>
+          <div class="inputLine">
+            <label for="main">Text přání:</label> <br>
+            <textarea id="textInputBoxWish" class="optionalText" name="Text1" cols="40" rows="5"></textarea>     
+          </div>
+        </div>   
         <div class="sendButton">
           <button type="button" class="sendButton" onclick="enableLoading()" >   Pokračovat  </button>
         </div>  

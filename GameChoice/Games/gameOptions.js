@@ -98,7 +98,7 @@ function wait(millis)
     while(curDate-date < millis);
 }
 function sendEmail() {
-
+ // console.log(document.getElementById("textInputBoxWish").value);
   const namespace = document.getElementById("fname").value;
 
   console.log(localStorage.package);
@@ -241,6 +241,8 @@ function sendPlayerOptions(namespace){
   }        
   playerOptionsFile += document.getElementById("platform").value + ", ";
   playerOptionsFile += localStorage.package + ", ";
+  playerOptionsFile += document.getElementById("textInputBox").value + ", ";
+  playerOptionsFile += document.getElementById("textInputBoxWish").value + ", ";
   $.ajax({
     async: false,
     type: "GET",

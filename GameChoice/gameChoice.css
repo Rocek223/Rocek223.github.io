@@ -5,9 +5,10 @@
 
 p.mainTitle {
   margin-top: 80px;
+
   text-align: center;
   color: #3C3C3C;
-  font-size: 3vw;
+  font-size: 25px;
   float: top;
   animation: fadeIn 2s;
 }

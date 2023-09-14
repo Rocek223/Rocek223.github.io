@@ -61,9 +61,9 @@
         frameworkUrl: buildUrl + "/BuildSnake.framework.js",
         codeUrl: buildUrl + "/BuildSnake.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "VlastniHryCC000",
+        companyName: "0805743",
         productName: "Had",
-        productVersion: "1.2",
+        productVersion: "1.50",
         showBanner: unityShowBanner,
       };
 
@@ -107,6 +107,7 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
+
         }).catch((message) => {
           alert(message);
         });

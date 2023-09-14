@@ -215,13 +215,13 @@ img.successIcon{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 10%;
+  width: 50px;
 }
 p.doneTitle{
-  margin-top: 20%;
+  margin-top: 250px;
   text-align: center;
   color: #3C3C3C;
-  font-size: 2.5vw;
+  font-size: 30px;
 
 }
 p.doneDescription{
@@ -229,30 +229,26 @@ p.doneDescription{
   margin-top: 3vw;
   text-align: center;
   color: #3C3C3C;
-  font-size: 1vw;
+  font-size: 20px;
 }
 button.backButton {
   float: top;
   background-color: #0BC000;
-  border-radius: 0.75vw;
+  border-radius: 10px;
   border: none;
   color: white;
   text-align: center;
   cursor: pointer;
-  width: 10vw;
-  height: 3vw;
-  font-size: 1vw;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
   display: block;
   margin: auto;
-  margin-top: -5vw;
+  margin-top: -100px;
 }
 .centerContent{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin: auto;
+
 }
 .loader {
   margin-right: 1vw;
@@ -303,4 +299,8 @@ display: block;
 
   transform: translate(calc(37.2vw), 3vw);
   margin-bottom: 100px;
+}
+textarea.optionalText{
+  height: 50px;
+  max-width: 500px;
 }
