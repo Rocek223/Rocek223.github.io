@@ -1,24 +1,32 @@
 p.mainTitle {
   line-height: 1.3;
-  margin-top: 80px;
-  margin-left: 100px;
-  text-align: left;
+  margin-top: 70px;
+  margin-left: 00px;
+  text-align: center;
   color: #3C3C3C;
   font-size: 4vw;
   float: top;
+
 }
 
 p.mainText {
   line-height: 1.5;
-  margin-left: 150px;
+
   margin-bottom: 0px;
   margin-top: 20px;
   color: #3C3C3C;
-  font-size: 1.3vw;
-  text-align: left;
+  font-size: 2vw;
+  text-align: center;
   float: top;
 }
 p.info {
+  line-height: 1.5;
+  color: #3C3C3C;
+  font-size: 1.5vw;
+    text-align: center;
+  display: inline;
+}
+p.info2 {
   line-height: 1;
   color: #3C3C3C;
   font-size: 1.2vw;
@@ -56,7 +64,7 @@ p.TextBoxPriceKc {
 p.TextBoxTitle {
   margin-top: 30px;
   color: #3C3C3C;
-  font-size: 32px;
+  font-size: 50px;
   text-align: center;
 }
 
@@ -78,13 +86,13 @@ button.create {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 100%;
+  font-size: 120%;
   margin: 20px;
   cursor: pointer;
   min-width: 0%;
   width: 400px;
   max-width: 100%;
-  padding: 15px;
+  padding: 12px;
   /*box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.2);*/
 }
 
@@ -98,14 +106,22 @@ body {
 }
 
 
-
+img.screenshot {
+  margin-top: 50px;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  float: left;
+  border-radius: 10px;
+  /*box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);*/
+}
 img.screenshot1 {
   margin-top: 100px;
   width: 120px;
   max-width: 100%;
   height: auto;
   float: right;
-  border-radius: 10px;
+  border-radius: 15px;
  /* box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);*/
 }
 img.screenshot2 {
@@ -114,19 +130,34 @@ img.screenshot2 {
   max-width: 100%;
   height: auto;
   float: left;
-  border-radius: 10px;
+  border-radius: 15px;
   /*box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);*/
 }
 
 div.package {
+  /*box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);*/
+  text-align: center;
+  background-color: white;
+  width: 45vw;
+  height: auto;
+  padding: 10px 30px;
+  margin-top: -950px;
+  margin-right: 20px;
+
+  border-radius: 10px;
+  background-color: white;
+
+  float: right;
+}
+div.package2 {
   box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
   text-align: center;
   background-color: white;
-  width: 40vw;
+  width: 80vw;
   height: auto;
   padding: 10px 30px;
-  margin-top: -1000px;
-  margin-right: 50px;
+  margin-top: -400px;
+  margin-right: 150px;
 
   border-radius: 10px;
   background-color: white;
