@@ -110,7 +110,7 @@ img.screenshot {
   max-width: 100%;
   height: auto;
   float: right;
-  border-radius: 25px; /*ddd */
+  border-radius: 25px; /*ddd   */
   box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
 }
 
