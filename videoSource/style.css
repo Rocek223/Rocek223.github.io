@@ -184,7 +184,7 @@ button * {
 }
 
 button::before {
-  content: attr(data-title);
+  /*content: attr(data-title);*/
   position: absolute;
   display: none;
   right: 0;

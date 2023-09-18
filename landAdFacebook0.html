@@ -1,5 +1,15 @@
 <!DOCTYPE html>
-<html lang="cz"><head><meta charset="UTF-8">
+<html lang="cz"><head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y8BYT4ENK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y8BYT4ENK');
+</script>
+<meta charset="UTF-8">
   <title>Vlastní hry</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="">
@@ -15,7 +25,48 @@
     if(detectMob() == true) {
       window.open("landAdFacebook0Mobile.html", "_self");
     }
+const stripe = Stripe('pk_test_51Nkp7PLgZCDYg0VR0VqQiqd0fAHPWFXjoZaeXzDUtlgsYgBBA8VNVpQb9yIaWEFaG8EJ9eeLdxpHiW0QaiboehOW00syzqvjHH');
+
+const appearance = { /* appearance */ };
+const options = { /* options */ };
+const elements = stripe.elements({ clientSecret, appearance });
+const paymentElement = elements.create('payment', options);
+paymentElement.mount('#payment-element');
+
+const stripe = Stripe('pk_test_51Nkp7PLgZCDYg0VR0VqQiqd0fAHPWFXjoZaeXzDUtlgsYgBBA8VNVpQb9yIaWEFaG8EJ9eeLdxpHiW0QaiboehOW00syzqvjHH');
+
+const appearance = { /* appearance */ };
+const options = {
+  layout: {
+    type: 'tabs',
+    defaultCollapsed: false,
+  }
+};
+const elements = stripe.elements({ clientSecret, appearance });
+const paymentElement = elements.create('payment', options);
+paymentElement.mount('#payment-element');
+const stripe = Stripe('pk_test_51Nkp7PLgZCDYg0VR0VqQiqd0fAHPWFXjoZaeXzDUtlgsYgBBA8VNVpQb9yIaWEFaG8EJ9eeLdxpHiW0QaiboehOW00syzqvjHH');
+
+const appearance = {
+  theme: 'flat',
+  variables: { colorPrimaryText: '#262626' }
+};
+const options = { /* options */ };
+const elements = stripe.elements({ clientSecret, appearance });
+const paymentElement = elements.create('payment', options);
+paymentElement.mount('#payment-element');
+const stripe = Stripe('pk_test_51Nkp7PLgZCDYg0VR0VqQiqd0fAHPWFXjoZaeXzDUtlgsYgBBA8VNVpQb9yIaWEFaG8EJ9eeLdxpHiW0QaiboehOW00syzqvjHH');
+
+const appearance = { /* appearance */};
+const options = {
+  business: "RocketRides"
+};
+const clientSecret = {{CLIENT_SECRET}};
+const elements = stripe.elements(appearance, clientSecret);
+const paymentElement = elements.create('payment', options);
+paymentElement.mount('#payment-element');
   </script>
+
   </head><body>
 
     <content>

@@ -1,5 +1,15 @@
 <!DOCTYPE html>
-<html lang="cz"><head><meta charset="UTF-8">
+<html lang="cz"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y8BYT4ENK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y8BYT4ENK');
+</script>
+<meta charset="UTF-8">
   <title>Vlastní hry</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="">
@@ -7,6 +17,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link id="topnav" rel="stylesheet" type="text/css" href="topnav.css">
   <link id="css" rel="stylesheet" type="text/css" href="indexMobile.css">
+  <script>
+    function detectMob() {
+      return ((window.innerHeight / window.innerWidth) > 1.3);
+    }
+  if(detectMob() == false){
+    console.log("nig");
+    window.open("index.html", "_self");
+  }
+  </script>
   </head><body>
     <top>
       <ul>
@@ -25,7 +44,7 @@
 
         <div class="screenshot">
           <img class="screenshot screenshot-1" src="screenshot1.png" alt="Screenshot1">
-          <img class="screenshot screenshot-2" src="screenshot2.jpg" alt="Screenshot2">
+          <img class="screenshot screenshot-2" src="screenshot2.png" alt="Screenshot2">
         </div>
       </div>
       <div id="offers">
