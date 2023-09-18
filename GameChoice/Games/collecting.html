@@ -1,5 +1,15 @@
 <!DOCTYPE html>
-<html lang="cz"><head><meta charset="UTF-8">
+<html lang="cz"><head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y8BYT4ENK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y8BYT4ENK');
+</script>
+<meta charset="UTF-8">
   <title>Vlastní hry</title>
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -128,6 +138,14 @@
           <div class="inputLine">
             <label for="main">Text přání:</label> <br>
             <textarea id="textInputBoxWish" class="optionalText" name="Text1" cols="40" rows="5"></textarea>     
+          </div>
+        </div>   
+        <div class="package" style="min-height: 250px;">
+          <p class="descriptionTitle"> Kontaktní údaje: </p>
+          <br><br>
+          <div class="inputLine">
+            <label for="main">Váš email (email na který vám přijde Vaše hra):</label>
+            <input class="text" type="text" id="email" name="input" value="">      
           </div>
         </div>   
         <div class="sendButton">

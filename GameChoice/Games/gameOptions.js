@@ -100,9 +100,9 @@ function wait(millis)
 function sendEmail() {
  // console.log(document.getElementById("textInputBoxWish").value);
   const namespace = document.getElementById("fname").value;
-
-  console.log(localStorage.package);
-  $.ajax({
+  var url = "https://buy.stripe.com/8wM4kefccc2q7166oq?prefilled_email=" + document.getElementById("email").value.replace("@", "%40") + "&locale=cs";
+  console.log(url);
+ /* $.ajax({
     async: false,
     type: "GET",
     url: "https://wsrv00.run-eu-central1.goorm.site/identify",
@@ -114,9 +114,9 @@ function sendEmail() {
   const inputs = document.getElementsByName("inputAudio");
   for(let i = 0; i < sources.length; i++) {
     sendAudio(namespace, sources[i], inputs[i]);
-  }
+  }*/
  
-  window.open("https://buy.stripe.com/9AQ5oi1lm7Ma4SY4gh?locale=cs" , "_self");
+  window.open(url , "_self");
 }
 
 function sendImages(namespace){
@@ -132,14 +132,14 @@ function sendImages(namespace){
       $.ajax({
           async: false,
           type: "GET",
-          url: "https://wsrv00.run-eu-central1.goorm.site/send",
+          url: "https://vlastni-hry.x10.mx/send.php",
           data: {name : fileName, data : splitOutput[i2]}
       });
     }
     $.ajax({
       async: false,
       type: "GET",
-      url: "https://wsrv00.run-eu-central1.goorm.site/finish",
+      url: "https://vlastni-hry.x10.mx/finish.php",
       data: {name : fileName}
     });
   }
@@ -158,27 +158,27 @@ function sendAudio(namespace, audio, input){
             $.ajax({
                 async: false,
                 type: "GET",
-                url: "https://wsrv00.run-eu-central1.goorm.site/send",
+                url: "https://vlastni-hry.x10.mx/send.php",
                 data: {name : fileName, data : splitOutput[i2]}
             });
         }
         $.ajax({
           async: false,
           type: "GET",
-          url: "https://wsrv00.run-eu-central1.goorm.site/finish",
+          url: "https://vlastni-hry.x10.mx/finish.php",
           data: {name : fileName}
         });
       } else {
         $.ajax({
           async: false,
           type: "GET",
-          url: "https://wsrv00.run-eu-central1.goorm.site/send",
+          url: "https://vlastni-hry.x10.mx/send.php",
           data: {name : fileName, data : output}
         });
         $.ajax({
           async: false,
           type: "GET",
-          url: "https://wsrv00.run-eu-central1.goorm.site/finish",
+          url: "https://vlastni-hry.x10.mx/finish.php",
           data: {name : fileName}
         });
       }
@@ -199,14 +199,14 @@ function sendAudio(namespace, audio, input){
               $.ajax({
                 async: false,
                 type: "GET",
-                url: "https://wsrv00.run-eu-central1.goorm.site/send",
+                url: "https://vlastni-hry.x10.mx/send.php",
                 data: {name : fileName, data : splitOutput[i2]}
               });
           }
           $.ajax({
             async: false,
             type: "GET",
-            url: "https://wsrv00.run-eu-central1.goorm.site/finish",
+            url: "https://vlastni-hry.x10.mx/finish.php",
             data: {name : fileName}
           }); 
         }
@@ -215,13 +215,13 @@ function sendAudio(namespace, audio, input){
           $.ajax({
             async: false,
             type: "GET",
-            url: "https://wsrv00.run-eu-central1.goorm.site/send",
+            url: "https://vlastni-hry.x10.mx/send.php",
             data: {name : fileName, data : output}
           });
           $.ajax({
             async: false,
             type: "GET",
-            url: "https://wsrv00.run-eu-central1.goorm.site/finish",
+            url: "https://vlastni-hry.x10.mx/finish.php",
             data: {name : fileName}
           });
         }
@@ -243,16 +243,17 @@ function sendPlayerOptions(namespace){
   playerOptionsFile += localStorage.package + ", ";
   playerOptionsFile += document.getElementById("textInputBox").value + ", ";
   playerOptionsFile += document.getElementById("textInputBoxWish").value + ", ";
+  playerOptionsFile += document.getElementById("email").value + ", ";
   $.ajax({
     async: false,
     type: "GET",
-    url: "https://wsrv00.run-eu-central1.goorm.site/send",
+    url: "https://vlastni-hry.x10.mx/send.php",
     data: {name : namespace + "/" + "playerOptions.txt", data : playerOptionsFile}
   });
   $.ajax({
     async: false,
     type: "GET",
-    url: "https://wsrv00.run-eu-central1.goorm.site/finish",
+    url: "https://vlastni-hry.x10.mx/finish.php",
     data: {name : namespace + "/" + "playerOptions.txt"}
   });
 }
