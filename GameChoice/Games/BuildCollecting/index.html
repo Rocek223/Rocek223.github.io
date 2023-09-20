@@ -62,7 +62,7 @@
         codeUrl: buildUrl + "/BuildCollecting.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "0805743",
-        productName: "sber",
+        productName: "Had",
         productVersion: "1.50",
         showBanner: unityShowBanner,
       };
@@ -107,6 +107,7 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
+
         }).catch((message) => {
           alert(message);
         });

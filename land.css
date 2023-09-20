@@ -78,6 +78,7 @@ div.TextBox {
 }
 
 button.create {
+  font-weight: bold;
   float: center;
   background-color: #1BC300;
   border-radius: 10px;
@@ -108,7 +109,7 @@ body {
 
 img.screenshot {
   margin-top: 50px;
-  width: 300px;
+  width: 12vw;
   max-width: 100%;
   height: auto;
   float: left;
@@ -117,7 +118,7 @@ img.screenshot {
 }
 img.screenshot1 {
   margin-top: 100px;
-  width: 120px;
+  width: 10vw;
   max-width: 100%;
   height: auto;
   float: right;
@@ -126,7 +127,7 @@ img.screenshot1 {
 }
 img.screenshot2 {
   margin-top: 100px;
-  width: 120px;
+  width: 10vw;
   max-width: 100%;
   height: auto;
   float: left;

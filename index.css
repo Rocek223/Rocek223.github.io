@@ -26,13 +26,13 @@ p.info {
 }
 p.TextBoxPrice {
   color: #3C3C3C;
-  font-size: 50px;
+  font-size: 3vw;
   text-align: center;
   display: inline;
 }
 p.TextBoxPriceKc {
   color: #3C3C3C;
-  font-size: 30px;
+  font-size: 2.5vw;
   text-align: center;
   display: inline;
 }
@@ -47,7 +47,7 @@ hr {
 p.TextBoxTitle {
   margin-top: 25px;
   color: #3C3C3C;
-  font-size: 23px;
+  font-size: 2vw;
   text-align: center;
 }
 
@@ -61,7 +61,8 @@ div.TextBox {
 }
 
 button {
-  float: left;
+  font-weight: bold;
+  float: center;
   background-color: #1BC300;
   border-radius: 10px;
   border: none;
@@ -69,13 +70,13 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 100%;
-  margin: 20px 2px;
+  font-size: 120%;
+  margin-bottom: 20px;
   cursor: pointer;
   min-width: 0%;
   width: 400px;
   max-width: 100%;
-  padding: 15px;
+  padding: 12px;
   /*box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.2);*/
 }
 
@@ -105,8 +106,8 @@ img.tick {
 }
 
 img.screenshot {
-  margin-right: 130px;
-  width: 180px;
+  margin-right: 5vw;
+  width: 12vw;
   max-width: 100%;
   height: auto;
   float: right;
@@ -171,5 +172,5 @@ html {
   height: 400px;
   justify-content: space-evenly;
   grid-template-columns: repeat(auto-fill, 33vw);
-  margin-top: 50px;
+  margin-top: 2vw;
 }

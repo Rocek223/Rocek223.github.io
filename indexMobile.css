@@ -61,7 +61,8 @@ div.TextBox {
 }
 
 button {
-  float: left;
+  font-weight: bold;
+  float: center;
   background-color: #1BC300;
   border-radius: 10px;
   border: none;
@@ -69,13 +70,13 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 100%;
-  margin: 20px 2px;
+  font-size: 120%;
+  margin-bottom: 20px;
   cursor: pointer;
   min-width: 0%;
   width: 400px;
   max-width: 100%;
-  padding: 15px;
+  padding: 12px;
   /*box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.2); */
 }
 
@@ -111,7 +112,7 @@ div.screenshot {
 
 img.screenshot {
   width: 35vw;
-  height: 45vh;
+  height: auto;
   float: left;
   border-radius: 20px;
   box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);

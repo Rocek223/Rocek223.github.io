@@ -32,11 +32,11 @@ body {
 }
 
 .video-container {
-  width: 650px;
+  width: 45vw;
   border-radius: 4px;
   margin: 0 auto;
    margin-top: -750px;
-  margin-left: 100px;
+  margin-left: 5vw;
   position: relative;
   display: flex;
   flex-direction: column;

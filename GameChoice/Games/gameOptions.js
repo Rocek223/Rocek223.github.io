@@ -88,7 +88,7 @@ function onCustomSoundChange(inputFileId, audioSourcePreviewId, audioPreviewId) 
 function enableLoading(){
   document.getElementById("loading").style.visibility = "visible";
   document.getElementById("myProgress").style.visibility = "visible";
-  setTimeout(sendEmail, 100)
+  setTimeout(sendEmail, 100);
 }
 function wait(millis)
 {
@@ -100,23 +100,25 @@ function wait(millis)
 function sendEmail() {
  // console.log(document.getElementById("textInputBoxWish").value);
   const namespace = document.getElementById("fname").value;
-  var url = "https://buy.stripe.com/8wM4kefccc2q7166oq?prefilled_email=" + document.getElementById("email").value.replace("@", "%40") + "&locale=cs";
-  console.log(url);
- /* $.ajax({
+  var url2 = "https://buy.stripe.com/8wM4kefccc2q7166oq?prefilled_email=" + document.getElementById("email").value.replace("@", "%40") + "&locale=cs";
+  console.log(url2);
+  $.ajax({
     async: false,
     type: "GET",
-    url: "https://wsrv00.run-eu-central1.goorm.site/identify",
+    url: "https://vlastni-hry.x10.mx/identify.php",
     data: {name : namespace}
   });
-  sendImages(namespace);
+
+  setTimeout(function() {sendImages(namespace)}, 1000);
   sendPlayerOptions(namespace);
   const sources = document.getElementsByName("sourceAudio");
   const inputs = document.getElementsByName("inputAudio");
   for(let i = 0; i < sources.length; i++) {
     sendAudio(namespace, sources[i], inputs[i]);
-  }*/
- 
-  window.open(url , "_self");
+  }
+
+window.open(url2 , "_self");
+console.log("KUDNA");
 }
 
 function sendImages(namespace){
@@ -124,9 +126,10 @@ function sendImages(namespace){
   const images = document.getElementsByName("inputImage");
   const imagesURL = [];
   for (let i = 0; i < images.length; i++) {
+    images[i].crossorigin = "anonymous";
     imagesURL[i] = getBase64Image(images[i]);
     var fileName = namespace + "/" + images[i].id + ".jpeg";
-    const splitOutput = imagesURL[i].match(new RegExp('.{1,' + parseInt(30000) + '}', 'g'));
+    const splitOutput = imagesURL[i].match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
     for(let i2 = 0; i2 < splitOutput.length; i2++)
     {
       $.ajax({
@@ -150,9 +153,9 @@ function sendAudio(namespace, audio, input){
   if(input.files[0] instanceof Blob) {
     getBase64(input.files[0]).then(output => {
       output = output.replace(/^data:audio\/.*;base64,/, "");
-      if(output.length > 50000)
+      if(output.length > 19000)
       {
-        const splitOutput = output.match(new RegExp('.{1,' + parseInt(30000) + '}', 'g'));
+        const splitOutput = output.match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
         for(let i2 = 0; i2 < splitOutput.length; i2++)
         {
             $.ajax({
@@ -191,9 +194,9 @@ function sendAudio(namespace, audio, input){
     .then(blob => {
       getBase64(blob).then(output => {
         output = output.replace(/^data:audio\/.*;base64,/, "");
-        if(output.length > 50000)
+        if(output.length > 19000)
         {
-          const splitOutput = output.match(new RegExp('.{1,' + parseInt((output.length) / 5) + '}', 'g'));
+          const splitOutput = output.match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
           for(let i2 = 0; i2 < splitOutput.length; i2++)
           {
               $.ajax({
@@ -250,12 +253,7 @@ function sendPlayerOptions(namespace){
     url: "https://vlastni-hry.x10.mx/send.php",
     data: {name : namespace + "/" + "playerOptions.txt", data : playerOptionsFile}
   });
-  $.ajax({
-    async: false,
-    type: "GET",
-    url: "https://vlastni-hry.x10.mx/finish.php",
-    data: {name : namespace + "/" + "playerOptions.txt"}
-  });
+
 }
 function getInfo(item, index){
   item.id + ":  " + item.value + "<br>";
