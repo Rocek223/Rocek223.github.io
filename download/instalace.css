@@ -1,0 +1,68 @@
+body {
+	font-family: Arial;
+	background-color: white;
+}
+
+:root {
+	--size: max(25vw, 35vh);
+	--size-half: calc(0px - calc(var(--size) / 2));
+}
+
+div.center {
+  width: var(--size);
+  height: calc(var(--size) * 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin:calc(var(--size-half) * 0.8) 0 0 var(--size-half);
+
+  background-color: #ffffff;
+
+  -webkit-box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.47);
+  -moz-box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.47);
+  box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.47);
+
+  border-radius: 2.5vh;
+
+  text-align: center;
+}
+
+a.text {
+	display: inline-block;
+	
+	margin: calc(var(--size) / 10);
+
+	margin-bottom: 0;
+
+	font-size: calc(var(--size) / 15);
+}
+
+div.button-center {
+	width: calc(var(--size) / 1.5);
+	height: calc(var(--size) / 3.0);
+
+	display: inline-block;
+	margin-top: calc(calc(var(--size) * 0.8) / 5);
+}
+
+button.platform-selection {
+	background-color: #1BC300;
+	color: white;
+
+	border: none;
+
+	width: calc(var(--size) / 4);
+	height: calc(var(--size) / 8);
+
+	margin: calc(var(--size) / 48);
+	font-size: calc(var(--size) / 25);
+
+	border-radius: 0.8vh;
+
+	box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.2)
+}
+
+button.platform-selection:hover {
+	background-color: #009900;
+	cursor: pointer;
+}
