@@ -1,0 +1,41 @@
+:root {
+  --size: calc(calc(30vh + calc(30vw * 1.5)) / 2);
+}
+
+body {
+	background-image: linear-gradient(#AAAAAA, #FFFFFF to left );
+}
+
+img {
+	width: var(--size);
+	margin-left: calc(50vw - calc(var(--size) / 2));
+}
+
+div.code {
+	border-left-width: 0.6vw;
+	border-left-style: solid;
+	border-left-color: #048800;
+	padding: 0.2vw;
+}
+
+p.code {
+	margin-left: 3vw;
+}
+
+div.code {
+	border-width: 2px;
+	border-style: solid;
+	border-color: #000000;
+	padding: 0.2vw;
+	border-radius: 10px;
+	box-shadow: 0px 0px 21px 0px #A0A0A0;
+}
+
+p.code {
+	margin-left: 2vw;
+}
+
+body {
+  background-color: white;
+  font-family: Arial;
+}

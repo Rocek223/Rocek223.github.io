@@ -86,3 +86,16 @@ div.loader {
 p.loadText {
 	font-size: 2vh;
 }
+
+div.main {
+	width: 100vw;
+	height: 100vh;
+
+  text-align: center;
+  display: table-cell;
+  vertical-align:middle;
+}
+
+p.successText {
+	font-size: calc(calc(5vh + 2.5vw) / 2);
+}
