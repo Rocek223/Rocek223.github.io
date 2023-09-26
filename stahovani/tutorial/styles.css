@@ -6,11 +6,14 @@ body {
 	background-image: linear-gradient(#AAAAAA, #FFFFFF to left );
 }
 
-img {
+img.high {
+	width: 20vw;
+	margin-left: calc(50vw - calc(var(--size) / 2));
+}
+img.long {
 	width: var(--size);
 	margin-left: calc(50vw - calc(var(--size) / 2));
 }
-
 div.code {
 	border-left-width: 0.6vw;
 	border-left-style: solid;
