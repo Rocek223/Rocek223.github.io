@@ -185,3 +185,17 @@ html {
   grid-template-columns: repeat(auto-fill, 80vw);
   margin-top: 0px;
 }
+input.textInput{
+  font-size: 20px;
+  margin-top: 30px;
+  height: 40px;
+  width: 400px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  transition:none;
+}
+input.textInput:focus{
+  transition: outline .2s;
+  outline: 5px solid DodgerBlue;
+  border: 1px solid gray;
+}

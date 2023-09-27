@@ -40,48 +40,9 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
       return ((window.innerHeight / window.innerWidth) > 1.3);
     }
     if(detectMob() == true) {
+      console.log("nig");
       window.open("landAdFacebook0Mobile.html", "_self");
     }
-const stripe = Stripe('pk_test_51Nkp7PLgZCDYg0VR0VqQiqd0fAHPWFXjoZaeXzDUtlgsYgBBA8VNVpQb9yIaWEFaG8EJ9eeLdxpHiW0QaiboehOW00syzqvjHH');
-
-const appearance = { /* appearance */ };
-const options = { /* options */ };
-const elements = stripe.elements({ clientSecret, appearance });
-const paymentElement = elements.create('payment', options);
-paymentElement.mount('#payment-element');
-
-const stripe = Stripe('pk_test_51Nkp7PLgZCDYg0VR0VqQiqd0fAHPWFXjoZaeXzDUtlgsYgBBA8VNVpQb9yIaWEFaG8EJ9eeLdxpHiW0QaiboehOW00syzqvjHH');
-
-const appearance = { /* appearance */ };
-const options = {
-  layout: {
-    type: 'tabs',
-    defaultCollapsed: false,
-  }
-};
-const elements = stripe.elements({ clientSecret, appearance });
-const paymentElement = elements.create('payment', options);
-paymentElement.mount('#payment-element');
-const stripe = Stripe('pk_test_51Nkp7PLgZCDYg0VR0VqQiqd0fAHPWFXjoZaeXzDUtlgsYgBBA8VNVpQb9yIaWEFaG8EJ9eeLdxpHiW0QaiboehOW00syzqvjHH');
-
-const appearance = {
-  theme: 'flat',
-  variables: { colorPrimaryText: '#262626' }
-};
-const options = { /* options */ };
-const elements = stripe.elements({ clientSecret, appearance });
-const paymentElement = elements.create('payment', options);
-paymentElement.mount('#payment-element');
-const stripe = Stripe('pk_test_51Nkp7PLgZCDYg0VR0VqQiqd0fAHPWFXjoZaeXzDUtlgsYgBBA8VNVpQb9yIaWEFaG8EJ9eeLdxpHiW0QaiboehOW00syzqvjHH');
-
-const appearance = { /* appearance */};
-const options = {
-  business: "RocketRides"
-};
-const clientSecret = {{CLIENT_SECRET}};
-const elements = stripe.elements(appearance, clientSecret);
-const paymentElement = elements.create('payment', options);
-paymentElement.mount('#payment-element');
   </script>
 
   </head><body>
@@ -91,7 +52,7 @@ paymentElement.mount('#payment-element');
   
 
 
-        <p class="mainTitle"> <b> Co dát blízkému jako dárek? </b> <br> <p class="mainText"> Darujte vlastní hru jako originální dárek!</p>
+        <p class="mainTitle"> <b> Co dát blízkému jako dárek? </b> <br> <p class="mainText"> Darujte vlastní originální hru!</p>
   
       </div>
       <div class="container">
@@ -205,9 +166,9 @@ paymentElement.mount('#payment-element');
 
             <div class="TextBox">
 <br> <br> <br>     
-              <p class="info"> <i>  •  Dárek který<b> zaujme </b>  </i> </p> <br> <br> <br>              
-              <p class="info"> <i>  • <b>  Vaše vlastní </b> obrázky ve hře </i> </p> <br> <br> <br> 
-              <p class="info"> <i>  • Za <p class="daysCrossed"> <s> 5 dní </s> </p>  <p class="daysBig"> <b> 2 dny</b> </p>   hotovo </i> </p> 
+              <p class="info">  •  Dárek, který<b> zaujme </b>  </i> </p> <br> <br> <br>              
+              <p class="info">  • <b>  Vaše vlastní </b> obrázky ve hře </i> </p> <br> <br> <br> 
+              <p class="info">  • Za <p class="daysCrossed"> <s> 5 dní </s> </p>  <p class="daysBig"> <b> 2 dny</b> </p>   hotovo </i> </p> 
 
 
             </div>              
@@ -225,9 +186,7 @@ paymentElement.mount('#payment-element');
 
             </div>              
 
-            <form action="GameChoice/gameChoice.html">
-                <button class="create" onclick='getPackage("Classic")'> <b> Začít tvořit hru </button>
-              </form>
+                <button class="create" onclick='window.open("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php?variable=landPageClicks&returnPage=https://vlastni-hry.cz/firstStep.html", "_self")'> <b> Začít tvořit hru </button>
           </div>
       </div>
     </content>

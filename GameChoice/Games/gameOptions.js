@@ -100,14 +100,17 @@ function wait(millis)
 function sendEmail() {
  // console.log(document.getElementById("textInputBoxWish").value);
   const namespace = document.getElementById("fname").value;
-  var url2 = "https://buy.stripe.com/8wM4kefccc2q7166oq?prefilled_email=" + document.getElementById("email").value.replace("@", "%40") + "&locale=cs";
+  var url2 = "https://vlastni-hry.cz/GameChoice/Games/paymentDone";
   console.log(url2);
-  $.ajax({
+
+  $.post( "https://vlastni-hry.x10.mx/identify.php", {name : namespace} );
+
+  /*$.ajax({
     async: false,
     type: "GET",
     url: "https://vlastni-hry.x10.mx/identify.php",
     data: {name : namespace}
-  });
+  });*/
 
   setTimeout(function() {sendImages(namespace)}, 1000);
   sendPlayerOptions(namespace);
@@ -117,7 +120,7 @@ function sendEmail() {
     sendAudio(namespace, sources[i], inputs[i]);
   }
 
-window.open(url2 , "_self");
+//window.open(url2 , "_self");
 console.log("KUDNA");
 }
 
@@ -132,19 +135,21 @@ function sendImages(namespace){
     const splitOutput = imagesURL[i].match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
     for(let i2 = 0; i2 < splitOutput.length; i2++)
     {
-      $.ajax({
+      $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : splitOutput[i2]} );
+     /* $.ajax({
           async: false,
           type: "GET",
           url: "https://vlastni-hry.x10.mx/send.php",
           data: {name : fileName, data : splitOutput[i2]}
-      });
+      });*/
     }
-    $.ajax({
+    $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
+    /*$.ajax({
       async: false,
       type: "GET",
       url: "https://vlastni-hry.x10.mx/finish.php",
       data: {name : fileName}
-    });
+    });*/
   }
 
 }
@@ -157,33 +162,36 @@ function sendAudio(namespace, audio, input){
       {
         const splitOutput = output.match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
         for(let i2 = 0; i2 < splitOutput.length; i2++)
-        {
-            $.ajax({
+        {   $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : splitOutput[i2]} );
+            /*$.ajax({
                 async: false,
                 type: "GET",
                 url: "https://vlastni-hry.x10.mx/send.php",
                 data: {name : fileName, data : splitOutput[i2]}
-            });
+            });*/
         }
-        $.ajax({
+        $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
+        /*$.ajax({
           async: false,
           type: "GET",
           url: "https://vlastni-hry.x10.mx/finish.php",
           data: {name : fileName}
-        });
+        });*/
       } else {
-        $.ajax({
+        $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : output} );
+        /*$.ajax({
           async: false,
           type: "GET",
           url: "https://vlastni-hry.x10.mx/send.php",
           data: {name : fileName, data : output}
-        });
-        $.ajax({
+        });*/
+        $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
+        /*$.ajax({
           async: false,
           type: "GET",
           url: "https://vlastni-hry.x10.mx/finish.php",
           data: {name : fileName}
-        });
+        });*/
       }
     });
   }
@@ -198,35 +206,38 @@ function sendAudio(namespace, audio, input){
         {
           const splitOutput = output.match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
           for(let i2 = 0; i2 < splitOutput.length; i2++)
-          {
-              $.ajax({
+          {   $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : splitOutput[i2]} );
+             /* $.ajax({
                 async: false,
                 type: "GET",
                 url: "https://vlastni-hry.x10.mx/send.php",
                 data: {name : fileName, data : splitOutput[i2]}
-              });
+              });*/
           }
-          $.ajax({
+          $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
+          /*$.ajax({
             async: false,
             type: "GET",
             url: "https://vlastni-hry.x10.mx/finish.php",
             data: {name : fileName}
-          }); 
+          }); */
         }
         else
         {
-          $.ajax({
+          $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : output} );
+         /* $.ajax({
             async: false,
             type: "GET",
             url: "https://vlastni-hry.x10.mx/send.php",
             data: {name : fileName, data : output}
-          });
-          $.ajax({
+          });*/
+          $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
+         /* $.ajax({
             async: false,
             type: "GET",
             url: "https://vlastni-hry.x10.mx/finish.php",
             data: {name : fileName}
-          });
+          });*/
         }
       });
     });
@@ -247,12 +258,13 @@ function sendPlayerOptions(namespace){
   playerOptionsFile += document.getElementById("textInputBox").value + ", ";
   playerOptionsFile += document.getElementById("textInputBoxWish").value + ", ";
   playerOptionsFile += document.getElementById("email").value + ", ";
-  $.ajax({
+  $.post( "https://vlastni-hry.x10.mx/send.php", {name : namespace + "/" + "playerOptions.txt", data : playerOptionsFile} );
+  /*$.ajax({
     async: false,
     type: "GET",
     url: "https://vlastni-hry.x10.mx/send.php",
     data: {name : namespace + "/" + "playerOptions.txt", data : playerOptionsFile}
-  });
+  });*/
 
 }
 function getInfo(item, index){
