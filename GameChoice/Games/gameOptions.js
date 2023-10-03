@@ -89,8 +89,8 @@ function onCustomSoundChange(inputFileId, audioSourcePreviewId, audioPreviewId) 
   audioPreview.load();
 }
 function enableLoading(){
-  document.getElementById("loading").style.visibility = "visible";
-  document.getElementById("myProgress").style.visibility = "visible";
+  //document.getElementById("loading").style.visibility = "visible";
+  //document.getElementById("myProgress").style.visibility = "visible";
   setTimeout(sendEmail, 100);
 }
 function wait(millis)
@@ -101,18 +101,27 @@ function wait(millis)
     while(curDate-date < millis);
 }
 function sendEmail() {
-  const namespace = document.getElementById("fname").value;
-  var url2 = "https://vlastni-hry.cz/GameChoice/Games/paymentDone";
+  if(document.getElementById("email").value.includes("@")){   
+       const namespace = document.getElementById("fname").value;
+        $.ajax({
+      async: false,
+      type: "GET",
+      url: "https://vlastni-hry.x10.mx/identify.php",
+      data: {name : namespace}
+    });
+    sendImages(namespace);
+    sendPlayerOptions(namespace);
 
-  $.ajax({
-    async: false,
-    type: "GET",
-    url: "https://vlastni-hry.x10.mx/identify.php",
-    data: {name : namespace}
-  });
+    var url2 = "https://vlastni-hry.cz/GameChoice/Games/paymentDone";
+    window.open("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php?variable=FinishOptions_Clicks&returnPage=" +  url2, "_self"); 
 
-  sendImages(namespace);
-  sendPlayerOptions(namespace);
+  }else{
+    document.getElementById("email").style.border = "2px Solid red";
+  }
+
+
+
+
 }
 
 function stringToFile(string, filename) {
