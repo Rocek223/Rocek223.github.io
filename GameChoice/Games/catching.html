@@ -94,7 +94,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="main">Padající předmět:</label>
             <img class="normalIcon" name="inputImage" id="mainCharacterIcon" alt="icon" src = "Catching/item1.png">
-            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Catching/item1.png", "Catching/item2.png", "Catching/item3.png")'>
+            <select name="inputPlayer" id="item" onclick='onCustomOptionChange("inputCharacter", "item", "mainCharacterIcon", "Catching/item1.png", "Catching/item2.png", "Catching/item3.png")'>
               <option value="1">Jablko (výchozí)</option>
               <option value="2">Peníze</option>
               <option value="3">Žába</option>
@@ -105,7 +105,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="pipes">Košík:</label>
             <img class="normalIcon" name="inputImage" id="PipeIcon" alt="icon" src = "Catching/catch1.png" style="width: 60px">
-            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "Catching/catch1.png", "Catching/catch3.png", "Catching/catch2.png")'>
+            <select name="inputPlayer" id="basket" onclick='onCustomOptionChange("inputPipe", "basket", "PipeIcon", "Catching/catch1.png", "Catching/catch3.png", "Catching/catch2.png")'>
               <option value="1">Normální košík (výchozí)</option>
               <option value="2">Ruce</option>
               <option value="3">Kýbl</option>
@@ -116,8 +116,8 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="background">Pozadí:</label>
             <img class="normalIcon" name="inputImage" id="backgroundIcon" alt="icon" src = "Catching/background1.png" style="width: 70px">
-            <select name="background" id="background" onclick=
-            'onCustomOptionChange("background", "backgroundIcon", "Catching/background1.png", "Catching/background2.png", "Catching/background3.png")'>
+            <select name="inputPlayer" id="background" onclick=
+            'onCustomOptionChange("inputBackground", "background", "backgroundIcon", "Catching/background1.png", "Catching/background2.png", "Catching/background3.png")'>
               <option value="1">Louka (výchozí)</option>
               <option value="2">Poušť</option>
               <option value="3">Město</option>
@@ -129,7 +129,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <p class="descriptionTitle"> Zvukové efekty: </p>
           <div class="inputLine">
             <label for="main">Zvuk chycení předmětu:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Catching/get1.mp3", "Catching/get2.wav", "Catching/get3.mp3", "inputSound1")'>
+            <select name="inputPlayer" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Catching/get1.mp3", "Catching/get2.wav", "Catching/get3.mp3", "inputSound1")'>
               <option value="1">Spadnutí (výchozí)</option>
               <option value="2">Cinknutí </option>
               <option value="3">Zvuk peněz </option>

@@ -103,7 +103,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="main">Hlavní postava:</label>
             <img class="normalIcon" id="mainCharacterIcon" alt="icon" name="inputImage" src = "Pacman/pacman1.png">
-            <select name="input" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Pacman/pacman1.png", "Pacman/lemon.png", "Pacman/coin.png")'>
+            <select name="inputPlayer" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Pacman/pacman1.png", "Pacman/lemon.png", "Pacman/coin.png")'>
               <option value="1">Pacman (výchozí)</option>
               <option value="2">Citron</option>
               <option value="3">Mince</option>
@@ -114,7 +114,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="pipes">Zdi:</label>
             <img class="normalIcon" id="PipeIcon" alt="icon" name="inputImage" src = "Pacman/wall1.png" style="width: 50px">
-            <select name="input" id="pipe" onclick='onCustomOptionChange("pipe", "PipeIcon", "Pacman/wall1.png", "Pacman/wall2.png", "Pacman/wall3.png")'>
+            <select name="inputPlayer" id="wall" onclick='onCustomOptionChange("inputPipe", "wall", "PipeIcon", "Pacman/wall1.png", "Pacman/wall2.png", "Pacman/wall3.png")'>
               <option value="1">Bílá (výchozí)</option>
               <option value="2">Modrá</option>
               <option value="3">Cihlová</option>
@@ -125,7 +125,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="pipes">Duch 1:</label>
             <img class="normalIcon" id="ghost1Icon" alt="icon" name="inputImage" src = "Pacman/ghost1.png" style="width: 30px">
-            <select name="input" id="ghost1" onclick='onCustomOptionChange("ghost1", "ghost1Icon", "Pacman/ghost1.png", "Pacman/ghost1G.png", "Pacman/ghost1TG.png")'>
+            <select name="inputPlayer" id="ghost1" onclick='onCustomOptionChange("inputPipe1", "ghost1", "ghost1Icon", "Pacman/ghost1.png", "Pacman/ghost1G.png", "Pacman/ghost1TG.png")'>
               <option value="1">Pixel (výchozí)</option>
               <option value="2">Kreslený</option>
               <option value="3">Ovoce</option>
@@ -136,7 +136,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="pipes">Duch 2:</label>
             <img class="normalIcon" id="ghost2Icon" alt="icon" name="inputImage" src = "Pacman/ghost2.png" style="width: 30px">
-            <select name="input" id="ghost2" onclick='onCustomOptionChange("ghost2", "ghost2Icon", "Pacman/ghost2.png", "Pacman/ghost2G.png", "Pacman/ghost2TG.png")'>
+            <select name="inputPlayer" id="ghost2" onclick='onCustomOptionChange("inputPipe2", "ghost2", "ghost2Icon", "Pacman/ghost2.png", "Pacman/ghost2G.png", "Pacman/ghost2TG.png")'>
               <option value="1">Pixel (výchozí)</option>
               <option value="2">Kreslený</option>
               <option value="3">Ovoce</option>
@@ -147,7 +147,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="pipes">Duch 3:</label>
             <img class="normalIcon" id="ghost3Icon" alt="icon" name="inputImage" src = "Pacman/ghost3.png" style="width: 30px">
-            <select name="input" id="ghost3" onclick='onCustomOptionChange("ghost3", "ghost3Icon", "Pacman/ghost3.png", "Pacman/ghost3G.png", "Pacman/ghost3TG.png")'>
+            <select name="inputPlayer" id="ghost3" onclick='onCustomOptionChange("inputPipe3", "ghost3", "ghost3Icon", "Pacman/ghost3.png", "Pacman/ghost3G.png", "Pacman/ghost3TG.png")'>
               <option value="1">Pixel (výchozí)</option>
               <option value="2">Kreslený</option>
               <option value="3">Ovoce</option>
@@ -158,7 +158,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="pipes">Duch 4:</label>
             <img class="normalIcon" id="ghost4Icon" alt="icon" name="inputImage"  src = "Pacman/ghost4.png" style="width: 30px">
-            <select name="input" id="ghost4" onclick='onCustomOptionChange("ghost4", "ghost4Icon", "Pacman/ghost4.png", "Pacman/ghost4G.png", "Pacman/ghost4TG.png")'>
+            <select name="inputPlayer" id="ghost4" onclick='onCustomOptionChange("inputPipe4", "ghost4", "ghost4Icon", "Pacman/ghost4.png", "Pacman/ghost4G.png", "Pacman/ghost4TG.png")'>
               <option value="1">Pixel (výchozí)</option>
               <option value="2">Kreslený</option>
               <option value="3">Ovoce</option>
@@ -171,7 +171,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <p class="descriptionTitle"> Zvukové efekty: </p>
           <div class="inputLine">
             <label for="main">Pacman:</label>
-            <select name="input" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "eatSoundPreview", "Pacman/eat1.mp3", "Pacman/eat2.mp3", "FlappyBird/kokodak.mp3", "inputSound1")'>
+            <select name="inputPlayer" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "eatSoundPreview", "Pacman/eat1.mp3", "Pacman/eat2.mp3", "FlappyBird/kokodak.mp3", "inputSound1")'>
               <option value="1">Pacman (výchozí)</option>
               <option value="2">Kousání </option>
             </select>
@@ -184,7 +184,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <br><br><br> <br><br><br>
           <div class="inputLine">
             <label for="main">Zvuk prohry:</label>
-            <select name="input" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "dieSoundPreview", "Pacman/kill1.mp3", "Pacman/kill2.mp3", "FlappyBird/pass3.wav", "inputSound2")'>
+            <select name="inputPlayer" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "dieSoundPreview", "Pacman/kill1.mp3", "Pacman/kill2.mp3", "FlappyBird/pass3.wav", "inputSound2")'>
               <option value="1">Klasika (výchozí)</option>
               <option value="2">Nůž</option>
             </select>

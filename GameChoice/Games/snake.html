@@ -80,7 +80,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="icon">Ikona hry:</label> 
             <img class="gameIcon" id="icon" alt="icon" name="inputImage" src = "Snake/icon.png">
-            <input type="file" class="file" id="inputIcon" name="avatar" accept="image/png, image/jpeg" onchange="onCustomIconChange('inputIcon', 'icon')"/>
+            <input type="file" class="file" id="inputIcon" accept="image/png, image/jpeg" onchange="onCustomIconChange('inputIcon', 'icon')"/>
           </div>
           <br><br><br> <br>
           <div class="inputLine">
@@ -94,7 +94,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="main">Had:</label>
             <img class="normalIcon" name="inputImage" id="mainCharacterIcon" alt="icon" src = "Snake/snake1.png">
-            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Snake/snake1.png", "Snake/snake2.png", "Snake/snake3.png")'>
+            <select name="inputPlayer" id="character" onclick='onCustomOptionChange("inputCharacter", "character", "mainCharacterIcon", "Snake/snake1.png", "Snake/snake2.png", "Snake/snake3.png")'>
               <option value="1">Modrý (výchozí)</option>
               <option value="2">Žlutý</option>
               <option value="3">Realistický</option>
@@ -105,7 +105,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="pipes">Jídlo:</label>
             <img class="normalIcon" name="inputImage" id="Food" alt="icon" src = "Snake/eat1.png" style="width: 40px">
-            <select name="pipe" id="pipe" onclick='onCustomOptionChange("pipe", "Food", "Snake/eat1.png", "Snake/eat2.png", "Snake/eat3.png")'>
+            <select name="inputPlayer" id="food" onclick='onCustomOptionChange("inputPipe", "food", "Food", "Snake/eat1.png", "Snake/eat2.png", "Snake/eat3.png")'>
               <option value="1">Jablko (výchozí)</option>
               <option value="2">Hruška</option>
               <option value="3">Čokoláda</option>
@@ -116,8 +116,8 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="background">Pozadí:</label>
             <img class="normalIcon" name="inputImage" id="backgroundIcon" alt="icon" src = "Snake/background1.png" style="width: 40px">
-            <select name="background" id="background" onclick=
-            'onCustomOptionChange("background", "backgroundIcon", "Snake/background1.png", "Snake/background2.png", "Snake/background3.png")'>
+            <select name="inputPlayer" id="background" onclick=
+            'onCustomOptionChange("inputBackground", "background", "backgroundIcon", "Snake/background1.png", "Snake/background2.png", "Snake/background3.png")'>
               <option value="1">Zelený (výchozí)</option>
               <option value="2">Podlaha </option>
               <option value="3">Tráva </option>
@@ -129,7 +129,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <p class="descriptionTitle"> Zvukové efekty: </p>
           <div class="inputLine">
             <label for="main">Had:</label>
-            <select name="character" id="flySound" onclick='onCustomSoundOptionChange("flySound", "audio2", "flySoundPreview", "Snake/eat1.mp3", "Snake/eat2.mp3", "Snake/kokodak.mp3" "inputSound1")'>
+            <select name="inputPlayer" id="bite" onclick='onCustomSoundOptionChange("bite", "audio2", "flySoundPreview", "Snake/eat1.mp3", "Snake/eat2.mp3", "Snake/kokodak.mp3", "inputSound1")'>
               <option value="1">Kousnutí 1 (výchozí)</option>
               <option value="2">Kousnutí 2 </option>
             </select>
@@ -142,7 +142,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <br><br><br> <br><br><br>
           <div class="inputLine">
             <label for="main">Zvuk prohry:</label>
-            <select name="character" id="passSound" onclick='onCustomSoundOptionChange("passSound", "audio1", "passSoundPreview", "Snake/die1.mp3", "Snake/die2.mp3", "FlappyBird/pass3.wav", "inputSound2")'>
+            <select name="inputPlayer" id="dieSound" onclick='onCustomSoundOptionChange("dieSound", "audio1", "passSoundPreview", "Snake/die1.mp3", "Snake/die2.mp3", "FlappyBird/pass3.wav", "inputSound2")'>
               <option value="1">Náraz 1 (výchozí)</option>
               <option value="2">Náraz 2</option>
             </select>
@@ -157,7 +157,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <p class="descriptionTitle"> Herní nastavení: </p>
           <div class="inputLine">
             <label for="main">Rychlost hada:</label>
-            <select name="inputPlayer" id="flySound">
+            <select name="inputPlayer" id="speed">
               <option value="1">Normální (výchozí)</option>
               <option value="2">Rychlá</option>
               <option value="3">Pomalá</option>

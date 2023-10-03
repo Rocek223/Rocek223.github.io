@@ -33,8 +33,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
   <link rel="stylesheet" href="">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <link rel="icon" type="jpg/png" href="../../pageIcon.png">  
-  <link rel="stylesheet" type="text/css" href="topnav.css">
+  <link rel="icon" type="jpg/png" href="../../pageIcon.png">
   <link id="CSS" rel="stylesheet" type="text/css" href="gameOptions.css">
   <script src="gameOptions.js"></script>
   <script>
@@ -94,7 +93,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="main">Sbíraná věc:</label>
             <img class="normalIcon" name="inputImage" id="mainCharacterIcon" alt="icon" src = "Collecting/item1.png">
-            <select name="character" id="character" onclick='onCustomOptionChange("character", "mainCharacterIcon", "Collecting/item1.png", "Collecting/item2.png", "Collecting/item3.png")'>
+            <select name="inputPlayer" id="item" onclick='onCustomOptionChange("inputCharacter", "item", "mainCharacterIcon", "Collecting/item1.png", "Collecting/item2.png", "Collecting/item3.png")'>
               <option value="1">Houba (výchozí)</option>
               <option value="2">Čtyřlístek</option>
               <option value="3">Salát</option>
@@ -106,8 +105,8 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
           <div class="inputLine">
             <label for="background">Pozadí:</label>
             <img class="normalIcon" name="inputImage" id="backgroundIcon" alt="icon" src = "Collecting/background1.png" style="width: 60px">
-            <select name="background" id="background" onclick=
-            'onCustomOptionChange("background", "backgroundIcon", "Collecting/background1.png", "Collecting/background2.png", "Collecting/background3.png")'>
+            <select name="inputPlayer" id="background" onclick=
+            'onCustomOptionChange("inputBackground", "background", "backgroundIcon", "Collecting/background1.png", "Collecting/background2.png", "Collecting/background3.png")'>
               <option value="1">Zelená (výchozí)</option>
               <option value="2">Tráva</option>
               <option value="3">Hlína</option>

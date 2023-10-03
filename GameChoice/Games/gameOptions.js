@@ -41,10 +41,11 @@ function onPlatformSelected() {
     platformIcon.src = "android.png";
   }
 }
-function onCustomOptionChange(selectionId, iconPreviewId, option1, option2, option3){
+function onCustomOptionChange(inputId, selectionId, iconPreviewId, option1, option2, option3){
+  var input = document.getElementById(inputId);
   var select = document.getElementById(selectionId);
   var platformIcon = document.getElementById(iconPreviewId);
-
+  input.value = "";
   if (select.value == 1){
     platformIcon.src = option1;
     platformIcon = URL.createObjectURL(platformIcon);
@@ -55,12 +56,14 @@ function onCustomOptionChange(selectionId, iconPreviewId, option1, option2, opti
   {
     platformIcon.src = option3;
   }
+
 }
 function onCustomSoundOptionChange(selectionId, audioPreviewId, audioSourcePreviewId, option1, option2, option3, audioInputId){
   var select = document.getElementById(selectionId);
   var audioPreview = document.getElementById(audioPreviewId);
   var audioSourcePreview = document.getElementById(audioSourcePreviewId);
   var audioInput = document.getElementById(audioInputId);
+
 
   if (select.value == 1){
     audioSourcePreview.src = option1;
@@ -98,60 +101,46 @@ function wait(millis)
     while(curDate-date < millis);
 }
 function sendEmail() {
- // console.log(document.getElementById("textInputBoxWish").value);
   const namespace = document.getElementById("fname").value;
   var url2 = "https://vlastni-hry.cz/GameChoice/Games/paymentDone";
-  console.log(url2);
 
-  $.post( "https://vlastni-hry.x10.mx/identify.php", {name : namespace} );
-
-  /*$.ajax({
+  $.ajax({
     async: false,
     type: "GET",
     url: "https://vlastni-hry.x10.mx/identify.php",
     data: {name : namespace}
-  });*/
+  });
 
-  setTimeout(function() {sendImages(namespace)}, 1000);
+  sendImages(namespace);
   sendPlayerOptions(namespace);
-  const sources = document.getElementsByName("sourceAudio");
-  const inputs = document.getElementsByName("inputAudio");
-  for(let i = 0; i < sources.length; i++) {
-    sendAudio(namespace, sources[i], inputs[i]);
-  }
+}
 
-//window.open(url2 , "_self");
-console.log("KUDNA");
+function stringToFile(string, filename) {
+  var blob = new Blob([string], { type: 'text/plain' });
+  return new File([blob], filename, {type: "text/plain"});
 }
 
 function sendImages(namespace){
+  const inpFiles = document.getElementsByClassName("file");
 
-  const images = document.getElementsByName("inputImage");
-  const imagesURL = [];
-  for (let i = 0; i < images.length; i++) {
-    images[i].crossorigin = "anonymous";
-    imagesURL[i] = getBase64Image(images[i]);
-    var fileName = namespace + "/" + images[i].id + ".jpeg";
-    const splitOutput = imagesURL[i].match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
-    for(let i2 = 0; i2 < splitOutput.length; i2++)
-    {
-      $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : splitOutput[i2]} );
-     /* $.ajax({
-          async: false,
-          type: "GET",
-          url: "https://vlastni-hry.x10.mx/send.php",
-          data: {name : fileName, data : splitOutput[i2]}
-      });*/
+  var endpoint = "";
+  const formData = new FormData();
+  for(let i = 0; i < inpFiles.length; i++) {
+    
+    if(inpFiles[i].files[0] == undefined){
+      endpoint = "https://vlastni-hry.x10.mx/send.php?name=" + namespace + "/" + inpFiles[i].id + ".file";
+      formData.append("inpFile", stringToFile("kunda", "nic"));
+    }else{
+      endpoint = "https://vlastni-hry.x10.mx/send.php?name=" + namespace + "/" + inpFiles[i].id + ".jpeg";
+      formData.append("inpFile", inpFiles[i].files[0]);      
     }
-    $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
-    /*$.ajax({
-      async: false,
-      type: "GET",
-      url: "https://vlastni-hry.x10.mx/finish.php",
-      data: {name : fileName}
-    });*/
-  }
 
+    fetch(endpoint, {
+      method: "post",
+      body: formData
+    }).catch(console.error);
+    console.log(inpFiles[i].id);
+  }
 }
 function sendAudio(namespace, audio, input){
   var fileName = namespace + "/" + audio.id + ".mp3";
@@ -161,37 +150,33 @@ function sendAudio(namespace, audio, input){
       if(output.length > 19000)
       {
         const splitOutput = output.match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
-        for(let i2 = 0; i2 < splitOutput.length; i2++)
-        {   $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : splitOutput[i2]} );
-            /*$.ajax({
-                async: false,
-                type: "GET",
-                url: "https://vlastni-hry.x10.mx/send.php",
-                data: {name : fileName, data : splitOutput[i2]}
-            });*/
+        for(let i2 = 0; i2 < splitOutput.length; i2++) {
+            $.ajax({
+              async: false,
+              type: "GET",
+              url: "https://vlastni-hry.x10.mx/send.php",
+              data: {content : splitOutput[i2], name: fileName}
+            });
         }
-        $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
-        /*$.ajax({
+        $.ajax({
           async: false,
           type: "GET",
           url: "https://vlastni-hry.x10.mx/finish.php",
           data: {name : fileName}
-        });*/
+        });
       } else {
-        $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : output} );
-        /*$.ajax({
+        $.ajax({
           async: false,
           type: "GET",
           url: "https://vlastni-hry.x10.mx/send.php",
-          data: {name : fileName, data : output}
-        });*/
-        $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
-        /*$.ajax({
+          data: {content : output, name: fileName}
+        });
+        $.ajax({
           async: false,
           type: "GET",
           url: "https://vlastni-hry.x10.mx/finish.php",
           data: {name : fileName}
-        });*/
+        });
       }
     });
   }
@@ -206,38 +191,35 @@ function sendAudio(namespace, audio, input){
         {
           const splitOutput = output.match(new RegExp('.{1,' + parseInt(20000) + '}', 'g'));
           for(let i2 = 0; i2 < splitOutput.length; i2++)
-          {   $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : splitOutput[i2]} );
-             /* $.ajax({
-                async: false,
-                type: "GET",
-                url: "https://vlastni-hry.x10.mx/send.php",
-                data: {name : fileName, data : splitOutput[i2]}
-              });*/
+          {   
+            $.ajax({
+              async: false,
+              type: "GET",
+              url: "https://vlastni-hry.x10.mx/send.php",
+              data: {content : splitOutput[i2], name: fileName}
+            });
           }
-          $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
-          /*$.ajax({
+          $.ajax({
             async: false,
             type: "GET",
             url: "https://vlastni-hry.x10.mx/finish.php",
             data: {name : fileName}
-          }); */
+          });
         }
         else
         {
-          $.post( "https://vlastni-hry.x10.mx/send.php", {name : fileName, data : output} );
-         /* $.ajax({
+          $.ajax({
             async: false,
             type: "GET",
             url: "https://vlastni-hry.x10.mx/send.php",
-            data: {name : fileName, data : output}
-          });*/
-          $.post( "https://vlastni-hry.x10.mx/finish.php", {name : fileName} );
-         /* $.ajax({
+            data: {content : output, name: fileName}
+          });
+          $.ajax({
             async: false,
             type: "GET",
             url: "https://vlastni-hry.x10.mx/finish.php",
             data: {name : fileName}
-          });*/
+          });
         }
       });
     });
@@ -245,26 +227,28 @@ function sendAudio(namespace, audio, input){
 }
 
 function sendPlayerOptions(namespace){
+  endpoint = "https://vlastni-hry.x10.mx/send.php?name=" + namespace + "/gameOptions.txt";
   const playerOptionsRaw = document.getElementsByName("inputPlayer");
   const playerOptions = [];
-  var playerOptionsFile = "";
+  var playerOptionsText = "";
 
   for(let i = 0; i < playerOptionsRaw.length; i++){
     playerOptions[i] = playerOptionsRaw[i].id + " " + playerOptionsRaw[i].value;
-    playerOptionsFile += playerOptions[i] + ", ";
+    playerOptionsText += playerOptions[i] + ", ";
   }        
-  playerOptionsFile += document.getElementById("platform").value + ", ";
-  playerOptionsFile += localStorage.package + ", ";
-  playerOptionsFile += document.getElementById("textInputBox").value + ", ";
-  playerOptionsFile += document.getElementById("textInputBoxWish").value + ", ";
-  playerOptionsFile += document.getElementById("email").value + ", ";
-  $.post( "https://vlastni-hry.x10.mx/send.php", {name : namespace + "/" + "playerOptions.txt", data : playerOptionsFile} );
-  /*$.ajax({
-    async: false,
-    type: "GET",
-    url: "https://vlastni-hry.x10.mx/send.php",
-    data: {name : namespace + "/" + "playerOptions.txt", data : playerOptionsFile}
-  });*/
+  playerOptionsText += document.getElementById("platform").value + ", ";
+  playerOptionsText += localStorage.package + ", ";
+  playerOptionsText += document.getElementById("textInputBox").value + ", ";
+  playerOptionsText += document.getElementById("textInputBoxWish").value + ", ";
+  playerOptionsText += document.getElementById("email").value + ", ";
+  const formDataPlayerOptions = new FormData();
+  formDataPlayerOptions.append("inpFile", stringToFile(playerOptionsText, "playerOptions.txt"));
+
+
+  fetch(endpoint, {
+    method: "post",
+    body: formDataPlayerOptions
+  }).catch(console.error);
 
 }
 function getInfo(item, index){
@@ -282,7 +266,7 @@ function getBase64(blob) {
 
 function getBase64Image(img) {
     // Create an empty canvas element
-    var canvas = document.createElement("canvas");    
+    var canvas = document.createElement("canvas"); 
 
     var dividerW = img.naturalWidth > 500 ? 3 : 1;
     var dividerH = img.naturalHeight > 500 ? 3 : 1;
