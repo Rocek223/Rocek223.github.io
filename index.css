@@ -139,7 +139,7 @@ div.package {
   margin-top: 30px;
   border-radius: 10px;
   background-color: white;
-  transform: translate(-50%, auto);
+  transform: translate(-100%, auto);
   float: left;
 }
 
@@ -172,6 +172,6 @@ html {
   display: grid;
   height: 400px;
   justify-content: space-evenly;
-  grid-template-columns: repeat(auto-fill, 33vw);
+  grid-template-columns: repeat(auto-fill, 50vw);
   margin-top: 2vw;
 }
