@@ -34,13 +34,22 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
    <link rel="stylesheet" href="videoSource/style.css" type="text/css">
   <link id="css" rel="stylesheet" type="text/css" href="land.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>
     function detectMob() {
       return ((window.innerHeight / window.innerWidth) > 1.3);
     }
     if(detectMob() == true) {
       window.open("landAdFacebook1Mobile.html", "_self");
+    }
+    function finish(){
+      url2 = "https://vlastni-hry.cz/firstStep.html";
+      $.ajax("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php", {
+        async: false,
+        method: "GET",
+        data: {variable: "LandPage_1_Clicks"}
+      });
+      window.open(url2, "_self");     
     }
   </script>
 
@@ -185,7 +194,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
 
             </div>              
 
-                <button class="create" onclick='window.open("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php?variable=LandPage_Clicks_1&returnPage=https://vlastni-hry.cz/firstStep.html", "_self")'> <b> Začít tvořit hru </button>
+                <button class="create" onclick='finish()'> <b> Začít tvořit hru </button>
           </div>
       </div>
     </content>

@@ -111,15 +111,21 @@ function sendEmail() {
     });
     sendImages(namespace);
     sendPlayerOptions(namespace);
-
-    var url2 = "https://vlastni-hry.cz/GameChoice/Games/paymentDone";
-    window.open("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php?variable=FinishOptions_Clicks&returnPage=" +  url2, "_self"); 
+    finish();
 
   }else{
     document.getElementById("email").style.border = "2px Solid red";
   }
 
-
+    function finish(){
+    var url2 = "https://vlastni-hry.cz/GameChoice/Games/paymentDone";
+      $.ajax("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php", {
+        async: false,
+        method: "GET",
+        data: {variable: "FinishOptions_Clicks"}
+      });
+      window.open(url2, "_self");     
+    }
 
 
 }

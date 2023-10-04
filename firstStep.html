@@ -35,20 +35,31 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
    <link rel="stylesheet" href="videoSource/style.css" type="text/css">
   <link id="css" rel="stylesheet" type="text/css" href="land.css">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
   <script>
     function analytics(){
       var url2 = "https://buy.stripe.com/8wM4kefccc2q7166oq?prefilled_email=" + document.getElementById("email").value.replace("@", "%40") + "&locale=cs";
-      window.open("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php?variable=StepEmail_Clicks&returnPage=" +  url2, "_self");      
+      $.ajax("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php", {
+        async: false,
+        method: "GET",
+        data: {variable: "StepEmail_Clicks"}
+      });
+      window.open(url2, "_self");            
     }
     function detectMob() {
       return ((window.innerHeight / window.innerWidth) > 1.3);
     }
     function sendEmail(){
       if(document.getElementById("email").value.includes("@")){
-        
+        $.ajax("https://vlastni-hry.x10.mx/analytics/emailAdd.php", {
+          async: false,
+          method: "GET",
+          data: {value: document.getElementById("email").value}
+        });
 
-        window.open("https://vlastni-hry.x10.mx/analytics/emailAdd.php?value=" + document.getElementById("email").value + "&returnPage=firstStep.html", "_self");
         setTimeout(analytics, 100);
+
       }else{
         document.getElementById("email").style.border = "2px Solid red";
       }
