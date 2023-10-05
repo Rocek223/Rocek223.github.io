@@ -1,5 +1,12 @@
 <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script> 
   var randomNumber = Math.round(Math.random());
-    window.open("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php?variable=landPageViews&returnPage=" + "https://vlastni-hry.cz/landAdFacebook" + randomNumber + ".html", "_self");
+        var url2 = "https://vlastni-hry.cz/landAdFacebook" + randomNumber + ".html";
+      $.ajax("https://vlastni-hry.x10.mx/analytics/analyticsAdd.php", {
+        async: false,
+        method: "GET",
+        data: {variable: "landPageViews"}
+      });
+     window.open(url2, "_self");
   </script>
