@@ -46,7 +46,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
       window.open(url2, "_self");            
     }
     function detectMob() {
-      return ((window.innerHeight / window.innerWidth) > 1.3);
+      return ((window.innerHeight / window.innerWidth) < 1.3);
     }
     function sendEmail(){
       if(document.getElementById("email").value.includes("@")){
@@ -68,7 +68,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
     }
     if(detectMob() == true) {
       console.log("nig");
-      window.open("firstStepMobile.html", "_self");
+      window.open("firstStep.html", "_self");
     }
   </script>
 
@@ -98,7 +98,7 @@ src="https://www.facebook.com/tr?id=851063926673714&ev=PageView&noscript=1"
             <div class="TextBox">
               
 
-              <p class="info"> Email, na který vám přijde vaše dokončená hra. </p> <br>
+              <p class="info"> Email, na který vám přijde vaše dokončená hra: </p> <br>
               <input class="textInput" type="text" id="email" onfocus="focusEmail()">  </input>
             </div>              
 

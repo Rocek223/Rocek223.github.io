@@ -1,5 +1,5 @@
 :root {
-  --scaleWin: 0.5;
+  --scaleWin: 0.6;
   --scaleScr: parseInt(screen.width);
 }
 
@@ -20,9 +20,26 @@ p.descriptionTitle {
   float: top;
   font-weight: bold;
 }
+p.firstDescriptionTitleL {
+  margin-top: 20px;
+  margin-right: -500px;
+  text-align: center;
+  color: #3C3C3C;
+  font-size: 2vw;
+  float: top;
+  font-weight: bold;
+}
+p.firstDescriptionL {
+  margin-top: 10px;
+  margin-right: -500px;
+  text-align: center;
+  color: #3C3C3C;
+  font-size: 1.5vw;
+  float: top;
+}
 p.firstDescriptionTitle {
   margin-top: 20px;
-  margin-right: -250px;
+  margin-right: -300px;
   text-align: center;
   color: #3C3C3C;
   font-size: 2vw;
@@ -31,7 +48,7 @@ p.firstDescriptionTitle {
 }
 p.firstDescription {
   margin-top: 10px;
-  margin-right: -250px;
+  margin-right: -300px;
   text-align: center;
   color: #3C3C3C;
   font-size: 1.5vw;
@@ -146,13 +163,26 @@ div.package {
   
   padding: 10px 50px;
   margin-top: 30px;
-  margin-left: 28vw;
+  margin-left: 23vw;
   border-radius: 10px;
   background-color: white;
   float: top;
 
 }
+div.package56 {
+  box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);
+  text-align: left;
+  background-color: white;
+  width: 35vw;
+  
+  padding: 10px 50px;
+  margin-top: 30px;
+  margin-left: 15vw;
+  border-radius: 10px;
+  background-color: white;
+  float: top;
 
+}
 
 input.file{
   margin-top: 10px;
@@ -182,16 +212,18 @@ iframe.landscape {
   border-radius: 10px;
   float: left;
   border-width:0;
-  margin-top: -250px;
+  margin-top: -270px;
   -ms-zoom: 0.75;
-  -moz-transform: scale(0.23);
+  -moz-transform: scale(0.45);
   -moz-transform-origin: 0 0;
-  -o-transform: scale(0.23);
+  -o-transform: scale(0.45);
   -o-transform-origin: 0 0;
-  -webkit-transform: scale(0.23);
+  -webkit-transform: scale(0.45);
   -webkit-transform-origin: 0 0;
 }
 iframe.portrait {
+  margin-top: 30px;
+  margin-left: -50px;
   width: 50vw;
   height: 75vw;
   border-radius: 10px;

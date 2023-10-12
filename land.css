@@ -23,7 +23,7 @@ p.info {
   line-height: 1.5;
   color: #3C3C3C;
   font-size: 1.5vw;
-    text-align: center;
+    text-align: left;
   display: inline;
 }
 p.info2 {
@@ -60,8 +60,15 @@ p.TextBoxPriceKc {
   text-align: center;
   display: inline;
 }
-
+p.TextBoxTitleR {
+  margin-right: 300px;
+  margin-top: 30px;
+  color: #3C3C3C;
+  font-size: 50px;
+  text-align: center;
+}
 p.TextBoxTitle {
+
   margin-top: 30px;
   color: #3C3C3C;
   font-size: 50px;
@@ -71,6 +78,15 @@ p.TextBoxTitle {
 div.TextBox {
    margin-top: 50px;
   margin-bottom: 50px;
+  line-height: 1;
+  color: #3C3C3C;
+  font-size: 1.3vw;
+  text-align: center;
+}
+div.TextBoxR {
+   margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 300px;
   line-height: 1;
   color: #3C3C3C;
   font-size: 1.3vw;
@@ -106,7 +122,36 @@ body {
   font-family: Arial;
 }
 
+img.screenshotL {
+  margin-top: 50px;
+  margin-left: 200px;
+  width: 25vw;
+  max-width: 100%;
+  height: auto;
+  float: left;
+  border-radius: 10px;
+  box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);*/
+}
+img.screenshotR {
+  margin-top: 50px;
+  margin-right: 200px;
+  width: 30vw;
+  max-width: 100%;
+  height: auto;
+  float: right;
+  border-radius: 10px;
+  box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);*/
+}
+img.screenshotGG {
+  margin-top: 50px;
+  margin-left: 200px;
+  width: 25vw;
+  max-width: 100%;
+  height: auto;
+  float: left;
+  border-radius: 10px;
 
+}
 img.screenshot {
   margin-top: 50px;
   width: 12vw;

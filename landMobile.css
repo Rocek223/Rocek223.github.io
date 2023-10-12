@@ -44,7 +44,7 @@ p.daysBig {
 p.daysCrossed {
   line-height: 1;
   color: #DF0000;
-  font-size: 1.2vw;
+  font-size: 4.2vw;
     text-align: center;
   display: inline;
 }
@@ -67,7 +67,13 @@ p.TextBoxTitle {
   font-size: 40px;
   text-align: center;
 }
-
+p.TextBoxTitleR {
+  margin-right: 300px;
+  margin-top: 30px;
+  color: #3C3C3C;
+  font-size: 50px;
+  text-align: center;
+}
 div.TextBox {
    margin-top: 50px;
   margin-bottom: 50px;
@@ -76,7 +82,15 @@ div.TextBox {
   font-size: 20px;
   text-align: center;
 }
-
+div.TextBoxR {
+   margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 300px;
+  line-height: 1;
+  color: #3C3C3C;
+  font-size: 1.3vw;
+  text-align: center;
+}
 button.create {
   float: center;
   background-color: #1BC300;
@@ -106,7 +120,36 @@ body {
   font-family: Arial;
 }
 
+img.screenshotL {
+  margin-top: 50px;
+  margin-left: 5vw;
+  width: 90vw;
+  max-width: 100%;
+  height: auto;
+  float: left;
+  border-radius: 10px;
+  box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);*/
+}
+img.screenshotR {
+  margin-top: 50px;
+  margin-left: 5vw;
+  width: 90vw;
+  max-width: 100%;
+  height: auto;
+  float: left;
+  border-radius: 10px;
+  box-shadow: 0 0.625rem 2.5rem rgba(17,48,77,0.3);*/
+}
+img.screenshotGG {
 
+  margin-left: 25vw;
+  width: 50vw;
+  max-width: 100%;
+  height: auto;
+  float: left;
+  border-radius: 10px;
+
+}
 img.screenshot {
   margin-top: 30px;
   width: 300px;
